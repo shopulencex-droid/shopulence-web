@@ -27,8 +27,12 @@ const FAQ = () => {
     }
   ];
 
-  const toggleFAQ = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
+  const handleMouseEnter = (index: number) => {
+    setOpenIndex(index);
+  };
+
+  const handleMouseLeave = () => {
+    setOpenIndex(null);
   };
 
   return (
@@ -45,25 +49,24 @@ const FAQ = () => {
           {faqs.map((faq, index) => (
             <div
               key={index}
+              onMouseEnter={() => handleMouseEnter(index)}
+              onMouseLeave={handleMouseLeave}
               className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-shadow"
             >
-              <button
-                onClick={() => toggleFAQ(index)}
-                className="w-full px-6 py-4 flex justify-between items-center text-left bg-white hover:bg-gray-50 transition-colors duration-200"
-              >
+              <div className="w-full px-6 py-4 flex justify-between items-center text-left bg-white hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
                 <span className="font-semibold text-lg text-[#002D62] pr-8">
                   {faq.question}
                 </span>
                 <div
-                  className={`text-[#002D62] flex-shrink-0 transition-transform duration-300 ${
+                  className={`text-[#002D62] flex-shrink-0 transition-transform duration-500 ease-in-out ${
                     openIndex === index ? 'rotate-180' : 'rotate-0'
                   }`}
                 >
                   <ChevronDown size={24} />
                 </div>
-              </button>
+              </div>
               <div
-                className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                className={`overflow-hidden transition-all duration-500 ease-in-out ${
                   openIndex === index
                     ? 'max-h-96 opacity-100'
                     : 'max-h-0 opacity-0'

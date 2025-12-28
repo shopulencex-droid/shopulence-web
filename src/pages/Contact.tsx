@@ -1,8 +1,11 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Mail, Send, Building2, Users, Headphones } from 'lucide-react';
-import FAQ from '../components/FAQ';
 
 const Contact = () => {
+  useEffect(() => {
+    document.title = 'Shopulence | Contact';
+  }, []);
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -212,8 +215,6 @@ const Contact = () => {
           </div>
         </div>
       </section>
-
-      <FAQ />
     </div>
   );
 };

@@ -1,6 +1,11 @@
+import { useEffect } from 'react';
 import { Building2, Target, Award, TrendingUp } from 'lucide-react';
+import FAQ from '../components/FAQ';
 
 const About = () => {
+  useEffect(() => {
+    document.title = 'Shopulence | About';
+  }, []);
   const timeline = [
     { year: '1985', title: 'Company Founded', description: 'Started as a small family-owned distribution business' },
     { year: '1995', title: 'First Major Brand', description: 'Launched our flagship cleaning brand, establishing market presence' },
@@ -166,6 +171,8 @@ const About = () => {
           </div>
         </div>
       </section>
+
+      <FAQ />
     </div>
   );
 };

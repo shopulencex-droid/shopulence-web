@@ -6,6 +6,10 @@ import FAQ from '../components/FAQ';
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
+  useEffect(() => {
+    document.title = 'Shopulence | Home';
+  }, []);
+
   const slides = [
     {
       title: 'Premium Brands for Trade Partners',

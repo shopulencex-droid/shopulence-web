@@ -1,8 +1,12 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ArrowRight, Sparkles, Wrench, Heart, Home, Dog, Leaf } from 'lucide-react';
 
 const Brands = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
+
+  useEffect(() => {
+    document.title = 'Shopulence | Brands';
+  }, []);
 
   const categories = ['All', 'Cleaning', 'DIY & Tools', 'Pet Care', 'Health', 'Household'];
 
