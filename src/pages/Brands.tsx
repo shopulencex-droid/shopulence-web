@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { ArrowRight, Sparkles, Wrench, Heart, Home, Dog, Leaf } from 'lucide-react';
 
 const Brands = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -8,90 +7,107 @@ const Brands = () => {
     document.title = 'Shopulence | Brands';
   }, []);
 
-  const categories = ['All', 'Cleaning', 'DIY & Tools', 'Pet Care', 'Health', 'Household'];
+  const categories = [
+    'All',
+    'Household Cleaning',
+    'Kitchen & Cooking',
+    'Home Fragrance',
+    'Personal Care',
+    'First Aid',
+    'Pet Treats & Toys',
+    'D.I.Y.',
+    'Gardening & Pest',
+    'Car Care',
+    'Hair & Grooming',
+    'Haberdashery',
+    'Stationery & Craft',
+    'Shoe Care'
+  ];
 
   const brands = [
-    {
-      name: 'Elbow Grease',
-      category: 'Cleaning',
-      tagline: 'Powerful degreasing solutions',
-      description: 'Industry-leading cleaning products trusted by professionals',
-      image: 'https://images.pexels.com/photos/4239091/pexels-photo-4239091.jpeg?auto=compress&cs=tinysrgb&w=600',
-      icon: Sparkles,
-      products: '45+ Products'
-    },
-    {
-      name: 'Duzzit',
-      category: 'Cleaning',
-      tagline: 'Complete home cleaning range',
-      description: 'Comprehensive cleaning solutions for every surface',
-      image: 'https://images.pexels.com/photos/4107278/pexels-photo-4107278.jpeg?auto=compress&cs=tinysrgb&w=600',
-      icon: Sparkles,
-      products: '60+ Products'
-    },
-    {
-      name: 'Pro-Kleen',
-      category: 'Cleaning',
-      tagline: 'Professional grade cleaning',
-      description: 'Commercial-strength products for demanding applications',
-      image: 'https://images.pexels.com/photos/4099471/pexels-photo-4099471.jpeg?auto=compress&cs=tinysrgb&w=600',
-      icon: Sparkles,
-      products: '35+ Products'
-    },
-    {
-      name: 'DIY Pro',
-      category: 'DIY & Tools',
-      tagline: 'Tools for every trade',
-      description: 'Quality tools and materials for professionals',
-      image: 'https://images.pexels.com/photos/5691622/pexels-photo-5691622.jpeg?auto=compress&cs=tinysrgb&w=600',
-      icon: Wrench,
-      products: '80+ Products'
-    },
-    {
-      name: 'FixIt Master',
-      category: 'DIY & Tools',
-      tagline: 'Professional repair solutions',
-      description: 'Everything you need for home and commercial repairs',
-      image: 'https://images.pexels.com/photos/5691641/pexels-photo-5691641.jpeg?auto=compress&cs=tinysrgb&w=600',
-      icon: Wrench,
-      products: '50+ Products'
-    },
-    {
-      name: 'PetCare Plus',
-      category: 'Pet Care',
-      tagline: 'Complete pet wellness',
-      description: 'Premium products for happy, healthy pets',
-      image: 'https://images.pexels.com/photos/4498220/pexels-photo-4498220.jpeg?auto=compress&cs=tinysrgb&w=600',
-      icon: Dog,
-      products: '75+ Products'
-    },
-    {
-      name: 'VitaHealth',
-      category: 'Health',
-      tagline: 'Family health essentials',
-      description: 'Trusted health and wellness products',
-      image: 'https://images.pexels.com/photos/3683041/pexels-photo-3683041.jpeg?auto=compress&cs=tinysrgb&w=600',
-      icon: Heart,
-      products: '40+ Products'
-    },
-    {
-      name: 'HomeEssentials',
-      category: 'Household',
-      tagline: 'Everyday household needs',
-      description: 'Quality products for modern living',
-      image: 'https://images.pexels.com/photos/4239013/pexels-photo-4239013.jpeg?auto=compress&cs=tinysrgb&w=600',
-      icon: Home,
-      products: '90+ Products'
-    },
-    {
-      name: 'EcoClean',
-      category: 'Cleaning',
-      tagline: 'Sustainable cleaning solutions',
-      description: 'Environmentally friendly products that work',
-      image: 'https://images.pexels.com/photos/4207892/pexels-photo-4207892.jpeg?auto=compress&cs=tinysrgb&w=600',
-      icon: Leaf,
-      products: '30+ Products'
-    }
+    // Household Cleaning
+    { name: 'Elbow Grease', category: 'Household Cleaning', logo: '/assets/brand1.png' },
+    { name: 'Duzzit', category: 'Household Cleaning', logo: '/assets/brand1.png' },
+    { name: 'Swirl', category: 'Household Cleaning', logo: '/assets/brand1.png' },
+    { name: 'Oven Brite', category: 'Household Cleaning', logo: '/assets/brand1.png' },
+    { name: 'Globe Mill Textiles', category: 'Household Cleaning', logo: '/assets/brand1.png' },
+    { name: 'Compu-Clean', category: 'Household Cleaning', logo: '/assets/brand1.png' },
+    { name: 'Lime Away', category: 'Household Cleaning', logo: '/assets/brand1.png' },
+    { name: 'Bin Brite', category: 'Household Cleaning', logo: '/assets/brand1.png' },
+    { name: 'Go Green', category: 'Household Cleaning', logo: '/assets/brand1.png' },
+    { name: 'Squij', category: 'Household Cleaning', logo: '/assets/brand1.png' },
+    { name: 'Pan Aroma Household', category: 'Household Cleaning', logo: '/assets/brand1.png' },
+    
+    // Kitchen & Cooking
+    { name: 'Seal-A-Pack', category: 'Kitchen & Cooking', logo: '/assets/brand1.png' },
+    { name: 'Home Maid', category: 'Kitchen & Cooking', logo: '/assets/brand1.png' },
+    { name: 'Queen Of Cakes', category: 'Kitchen & Cooking', logo: '/assets/brand1.png' },
+    { name: 'Simply Eggs', category: 'Kitchen & Cooking', logo: '/assets/brand1.png' },
+    
+    // Home Fragrance
+    { name: 'Pan Aroma', category: 'Home Fragrance', logo: '/assets/brand1.png' },
+    { name: 'Waxworks', category: 'Home Fragrance', logo: '/assets/brand1.png' },
+    
+    // Personal Care
+    { name: 'Nuage', category: 'Personal Care', logo: '/assets/brand1.png' },
+    { name: 'Elysium Spa', category: 'Personal Care', logo: '/assets/brand1.png' },
+    { name: 'Cotton Tree', category: 'Personal Care', logo: '/assets/brand1.png' },
+    { name: 'Dentiplus', category: 'Personal Care', logo: '/assets/brand1.png' },
+    { name: 'Escenti', category: 'Personal Care', logo: '/assets/brand1.png' },
+    { name: 'Swift', category: 'Personal Care', logo: '/assets/brand1.png' },
+    { name: 'Sand Away', category: 'Personal Care', logo: '/assets/brand1.png' },
+    { name: 'Fun Time', category: 'Personal Care', logo: '/assets/brand1.png' },
+    { name: 'PestShield Personal Care', category: 'Personal Care', logo: '/assets/brand1.png' },
+    
+    // First Aid
+    { name: 'Masterplast', category: 'First Aid', logo: '/assets/brand1.png' },
+    { name: 'Hygienics', category: 'First Aid', logo: '/assets/brand1.png' },
+    { name: 'Easy Read', category: 'First Aid', logo: '/assets/brand1.png' },
+    
+    // Pet Treats & Toys
+    { name: 'Munch & Crunch', category: 'Pet Treats & Toys', logo: '/assets/brand1.png' },
+    { name: 'Pride & Groom', category: 'Pet Treats & Toys', logo: '/assets/brand1.png' },
+    { name: 'Feed Me!', category: 'Pet Treats & Toys', logo: '/assets/brand1.png' },
+    
+    // D.I.Y.
+    { name: '151 Core Group', category: 'D.I.Y.', logo: '/assets/brand1.png' },
+    { name: '151 Coatings', category: 'D.I.Y.', logo: '/assets/brand1.png' },
+    { name: '151 Adhesives', category: 'D.I.Y.', logo: '/assets/brand1.png' },
+    { name: 'Techno Mats', category: 'D.I.Y.', logo: '/assets/brand1.png' },
+    { name: 'Love Your Wood', category: 'D.I.Y.', logo: '/assets/brand1.png' },
+    { name: '151 Decorators Tools', category: 'D.I.Y.', logo: '/assets/brand1.png' },
+    { name: 'Gorilla Filler', category: 'D.I.Y.', logo: '/assets/brand1.png' },
+    { name: '151 Professional', category: 'D.I.Y.', logo: '/assets/brand1.png' },
+    
+    // Gardening & Pest
+    { name: 'Chatsworth', category: 'Gardening & Pest', logo: '/assets/brand1.png' },
+    { name: 'PestShield', category: 'Gardening & Pest', logo: '/assets/brand1.png' },
+    { name: 'Eazifeed', category: 'Gardening & Pest', logo: '/assets/brand1.png' },
+    
+    // Car Care
+    { name: 'Car Pride', category: 'Car Care', logo: '/assets/brand1.png' },
+    { name: 'Chupa Chups', category: 'Car Care', logo: '/assets/brand1.png' },
+    
+    // Hair & Grooming
+    { name: 'Rolls Razor', category: 'Hair & Grooming', logo: '/assets/brand1.png' },
+    { name: 'Head Funk', category: 'Hair & Grooming', logo: '/assets/brand1.png' },
+    { name: 'Enrico Shonalli', category: 'Hair & Grooming', logo: '/assets/brand1.png' },
+    { name: 'Jolly Good Grooming', category: 'Hair & Grooming', logo: '/assets/brand1.png' },
+    { name: 'Nuage Hair', category: 'Hair & Grooming', logo: '/assets/brand1.png' },
+    { name: 'Escenti Kids', category: 'Hair & Grooming', logo: '/assets/brand1.png' },
+    { name: 'Fruit Fusion', category: 'Hair & Grooming', logo: '/assets/brand1.png' },
+    
+    // Haberdashery
+    { name: 'Sewing Box', category: 'Haberdashery', logo: '/assets/brand1.png' },
+    
+    // Stationery & Craft
+    { name: 'Chiltern Wove', category: 'Stationery & Craft', logo: '/assets/brand1.png' },
+    { name: '151 Artist', category: 'Stationery & Craft', logo: '/assets/brand1.png' },
+    
+    // Shoe Care
+    { name: 'Jump', category: 'Shoe Care', logo: '/assets/brand1.png' },
+    { name: 'Out & About', category: 'Shoe Care', logo: '/assets/brand1.png' },
+    { name: 'Urban Kicks', category: 'Shoe Care', logo: '/assets/brand1.png' }
   ];
 
   const filteredBrands = selectedCategory === 'All'
@@ -134,45 +150,23 @@ const Brands = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-[#F3F4F6]">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
             {filteredBrands.map((brand, index) => (
               <div
                 key={index}
-                className="group bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+                className="bg-white rounded-xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300 flex flex-col items-center justify-center min-h-[280px]"
               >
-                <div className="relative h-56 overflow-hidden">
-                  <img
-                    src={brand.image}
-                    alt={brand.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-[#002D62]">
-                    {brand.products}
-                  </div>
-                  <div className="absolute bottom-4 left-4">
-                    <brand.icon size={32} className="text-white" />
-                  </div>
+                <div className="text-sm font-semibold text-gray-500 mb-4 text-center w-full">
+                  {brand.name}®
                 </div>
-
-                <div className="p-6">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="text-2xl font-bold text-[#002D62]">{brand.name}</h3>
-                    <span className="text-xs font-semibold text-gray-500 uppercase tracking-wider">
-                      {brand.category}
-                    </span>
-                  </div>
-                  <p className="text-sm font-semibold text-gray-600 mb-3">{brand.tagline}</p>
-                  <p className="text-gray-600 mb-6">{brand.description}</p>
-                  <button className="group/btn w-full bg-[#002D62] text-white px-6 py-3 rounded-md font-semibold hover:bg-[#003d82] transition flex items-center justify-center">
-                    View Range
-                    <ArrowRight
-                      size={18}
-                      className="ml-2 group-hover/btn:translate-x-1 transition-transform"
-                    />
-                  </button>
+                <div className="flex-1 flex items-center justify-center w-full">
+                  <img
+                    src={brand.logo}
+                    alt={brand.name}
+                    className="max-w-full max-h-32 object-contain"
+                  />
                 </div>
               </div>
             ))}
