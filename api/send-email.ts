@@ -5,9 +5,6 @@ export default async function handler(
   request: VercelRequest,
   response: VercelResponse,
 ) {
-  // Always set JSON content type
-  response.setHeader('Content-Type', 'application/json');
-  
   // Set CORS headers
   response.setHeader('Access-Control-Allow-Origin', '*');
   response.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
@@ -15,7 +12,7 @@ export default async function handler(
 
   // Handle preflight
   if (request.method === 'OPTIONS') {
-    return response.status(200).json({ message: 'OK' });
+    return response.status(200).end();
   }
 
   if (request.method !== 'POST') {
@@ -51,7 +48,7 @@ export default async function handler(
     // Email content
     const mailOptions = {
       from: process.env.SMTP_FROM || process.env.SMTP_USER,
-      to: process.env.RECIPIENT_EMAIL || 'info@shopulence.com',
+      to: process.env.RECIPIENT_EMAIL || 'umarzeeshan709@gmail.com',
       replyTo: email,
       subject: `New Contact Form Submission - ${department}`,
       html: `

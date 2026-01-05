@@ -17,19 +17,19 @@ This project uses a Vercel serverless function to send emails from the contact f
 **Before setting up, understand this:**
 
 - **SMTP_USER** = The Gmail account that **SENDS** the email (needs App Password)
-  - This is YOUR Gmail account (`info@shopulence.com`)
+  - This is YOUR Gmail account (`umarzeeshan709@gmail.com`)
   - This account must have 2-Step Verification enabled
   - This account needs an App Password generated
   
 - **SMTP_FROM** = The "From" address shown in the email (usually same as SMTP_USER)
-  - Usually: `info@shopulence.com`
+  - Usually: `umarzeeshan709@gmail.com`
   - This is what recipients see as the sender
 
 - **RECIPIENT_EMAIL** = Where form submissions are **RECEIVED**
   - This is where YOU want to receive contact form submissions
   - Can be the same as SMTP_USER or different
   - Does NOT need App Password (it's just receiving emails)
-  - Example: `info@shopulence.com` (your inbox)
+  - Example: `umarzeeshan709@gmail.com` (your inbox)
 
 **Simple Explanation:**
 - **SMTP_USER** = Your Gmail that sends emails (needs setup)
@@ -38,16 +38,16 @@ This project uses a Vercel serverless function to send emails from the contact f
 **Visual Example:**
 ```
 User fills form → Your website → SMTP_USER sends email → RECIPIENT_EMAIL receives it
-                                 (info@shopulence.com)                    (your inbox)
+                                 (umarzeeshan709)                    (your inbox)
                                  
                                  Needs App Password              Just receives emails
                                  (you set this up)                (no setup needed)
 ```
 
 **In Your Case:**
-- Both `SMTP_USER` and `RECIPIENT_EMAIL` are the same: `info@shopulence.com`
+- Both `SMTP_USER` and `RECIPIENT_EMAIL` are the same: `umarzeeshan709@gmail.com`
 - This means: Your Gmail sends the email AND receives it (to your inbox)
-- You only need to set up App Password ONCE for `info@shopulence.com`
+- You only need to set up App Password ONCE for `umarzeeshan709@gmail.com`
 
 ---
 
@@ -60,13 +60,13 @@ When you're in Vercel Environment Variables, add these one by one:
 | `SMTP_HOST` | `smtp.gmail.com` | Gmail's server address |
 | `SMTP_PORT` | `587` | Port number for Gmail |
 | `SMTP_SECURE` | `false` | Security setting |
-| `SMTP_USER` | `info@shopulence.com` | **Your Gmail that sends emails** (needs App Password) |
+| `SMTP_USER` | `umarzeeshan709@gmail.com` | **Your Gmail that sends emails** (needs App Password) |
 | `SMTP_PASS` | `[Your App Password]` | **Password for SMTP_USER** (get from Google) |
-| `SMTP_FROM` | `info@shopulence.com` | **"From" address** (usually same as SMTP_USER) |
-| `RECIPIENT_EMAIL` | `info@shopulence.com` | **Where you receive form submissions** (can be any email) |
+| `SMTP_FROM` | `umarzeeshan709@gmail.com` | **"From" address** (usually same as SMTP_USER) |
+| `RECIPIENT_EMAIL` | `umarzeeshan709@gmail.com` | **Where you receive form submissions** (can be any email) |
 
 **Note:** 
-- For `SMTP_PASS`, you need to get a Gmail App Password for `info@shopulence.com` (instructions below)
+- For `SMTP_PASS`, you need to get a Gmail App Password for `umarzeeshan709@gmail.com` (instructions below)
 - `RECIPIENT_EMAIL` can be different from `SMTP_USER` if you want to receive emails at a different address
 
 ## Environment Variables Setup
@@ -85,10 +85,10 @@ You need to set up the following environment variables in your Vercel project:
 SMTP_HOST = smtp.gmail.com
 SMTP_PORT = 587
 SMTP_SECURE = false
-SMTP_USER = info@shopulence.com
+SMTP_USER = umarzeeshan709@gmail.com
 SMTP_PASS = [YOUR 16-CHARACTER APP PASSWORD FROM GOOGLE - SEE BELOW]
-SMTP_FROM = info@shopulence.com
-RECIPIENT_EMAIL = info@shopulence.com
+SMTP_FROM = umarzeeshan709@gmail.com
+RECIPIENT_EMAIL = umarzeeshan709@gmail.com
 ```
 
 **IMPORTANT:** 
