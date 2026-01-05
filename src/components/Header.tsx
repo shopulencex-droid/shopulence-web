@@ -26,11 +26,11 @@ const Header = () => {
 
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          <Link to="/" className="flex items-center">
+          <Link to="/" className="flex items-center hover-scale">
             <img 
               src={logo} 
               alt="Shopulence" 
-              className="h-12 object-contain" 
+              className="h-12 object-contain transition-transform duration-300" 
               style={{ filter: 'brightness(0) saturate(100%) invert(18%) sepia(100%) saturate(1352%) hue-rotate(195deg) brightness(95%) contrast(101%)' }}
             />
           </Link>
@@ -69,7 +69,7 @@ const Header = () => {
         </div>
 
         {mobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-200">
+          <div className="md:hidden py-4 border-t border-gray-200 animate-slide-in-left">
             <div className="flex flex-col space-y-4">
               <Link
                 to="/"

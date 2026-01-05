@@ -153,7 +153,7 @@ const Home = () => {
 
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 animate-fade-in-up">
             <h2 className="text-4xl font-bold text-[#002D62] mb-4">Featured Categories</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Explore our diverse range of products designed for trade professionals
@@ -164,7 +164,8 @@ const Home = () => {
             {categories.map((category, index) => (
               <div
                 key={index}
-                className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300"
+                className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 animate-fade-in-up"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="h-64 overflow-hidden">
                   <img
@@ -194,7 +195,7 @@ const Home = () => {
       <section className="py-20 bg-gradient-to-br from-[#002D62] to-[#003d82] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
+            <div className="animate-fade-in-up">
               <h2 className="text-4xl md:text-5xl font-bold mb-6">Our Brands Portfolio</h2>
               <p className="text-xl text-gray-200 mb-8 leading-relaxed">
                 We partner with leading manufacturers and trusted brands across multiple industries. 
@@ -219,22 +220,22 @@ const Home = () => {
               </Link>
             </div>
             <div className="grid grid-cols-2 gap-4">
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center animate-fade-in-up hover-scale" style={{ animationDelay: '0.1s' }}>
                 <Star className="mx-auto mb-3" size={32} />
                 <h3 className="font-bold text-lg mb-2">Premium Quality</h3>
                 <p className="text-sm text-gray-200">Industry-leading standards</p>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center animate-fade-in-up hover-scale" style={{ animationDelay: '0.2s' }}>
                 <Award className="mx-auto mb-3" size={32} />
                 <h3 className="font-bold text-lg mb-2">Certified Brands</h3>
                 <p className="text-sm text-gray-200">Trusted by professionals</p>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center animate-fade-in-up hover-scale" style={{ animationDelay: '0.3s' }}>
                 <TrendingUp className="mx-auto mb-3" size={32} />
                 <h3 className="font-bold text-lg mb-2">Growing Range</h3>
                 <p className="text-sm text-gray-200">New brands added regularly</p>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center animate-fade-in-up hover-scale" style={{ animationDelay: '0.4s' }}>
                 <ShoppingBag className="mx-auto mb-3" size={32} />
                 <h3 className="font-bold text-lg mb-2">Wide Selection</h3>
                 <p className="text-sm text-gray-200">500+ products available</p>
