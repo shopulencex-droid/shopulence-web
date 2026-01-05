@@ -1,14 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 
 const Brands = () => {
-  const [selectedCategory, setSelectedCategory] = useState('All');
-
   useEffect(() => {
     document.title = 'Shopulence | Brands';
   }, []);
 
   const categories = [
-    'All',
     'Household Cleaning',
     'Kitchen & Cooking',
     'Home Fragrance',
@@ -27,88 +24,79 @@ const Brands = () => {
 
   const brands = [
     // Household Cleaning
-    { name: 'Elbow Grease', category: 'Household Cleaning', logo: '/assets/brand1.png' },
-    { name: 'Duzzit', category: 'Household Cleaning', logo: '/assets/brand1.png' },
-    { name: 'Swirl', category: 'Household Cleaning', logo: '/assets/brand1.png' },
-    { name: 'Oven Brite', category: 'Household Cleaning', logo: '/assets/brand1.png' },
-    { name: 'Globe Mill Textiles', category: 'Household Cleaning', logo: '/assets/brand1.png' },
-    { name: 'Compu-Clean', category: 'Household Cleaning', logo: '/assets/brand1.png' },
-    { name: 'Lime Away', category: 'Household Cleaning', logo: '/assets/brand1.png' },
-    { name: 'Bin Brite', category: 'Household Cleaning', logo: '/assets/brand1.png' },
-    { name: 'Go Green', category: 'Household Cleaning', logo: '/assets/brand1.png' },
-    { name: 'Squij', category: 'Household Cleaning', logo: '/assets/brand1.png' },
-    { name: 'Pan Aroma Household', category: 'Household Cleaning', logo: '/assets/brand1.png' },
+    { name: 'Elbow Grease', category: 'Household Cleaning', logo: '/assets/leftovers/35.png' },
+    { name: 'Duzzit', category: 'Household Cleaning', logo: '/assets/leftovers/36.png' },
+    { name: 'Swirl', category: 'Household Cleaning', logo: '/assets/leftovers/37.png' },
+    { name: 'Oven Brite', category: 'Household Cleaning', logo: '/assets/leftovers/38.png' },
+    { name: 'Globe Mill Textiles', category: 'Household Cleaning', logo: '/assets/leftovers/39.png' },
+    { name: 'Compu-Clean', category: 'Household Cleaning', logo: '/assets/leftovers/40.png' },
+    { name: 'Lime Away', category: 'Household Cleaning', logo: '/assets/leftovers/41.png' },
+    { name: 'Bin Brite', category: 'Household Cleaning', logo: '/assets/leftovers/42.png' },
+    { name: 'Go Green', category: 'Household Cleaning', logo: '/assets/leftovers/43.png' },
+    { name: 'Squij', category: 'Household Cleaning', logo: '/assets/leftovers/44.png' },
+    { name: 'Pan Aroma Household', category: 'Household Cleaning', logo: '/assets/leftovers/45.png' },
     
     // Kitchen & Cooking
-    { name: 'Seal-A-Pack', category: 'Kitchen & Cooking', logo: '/assets/brand1.png' },
-    { name: 'Home Maid', category: 'Kitchen & Cooking', logo: '/assets/brand1.png' },
-    { name: 'Queen Of Cakes', category: 'Kitchen & Cooking', logo: '/assets/brand1.png' },
-    { name: 'Simply Eggs', category: 'Kitchen & Cooking', logo: '/assets/brand1.png' },
+    { name: 'Seal-A-Pack', category: 'Kitchen & Cooking', logo: '/assets/leftovers/46.png' },
+    { name: 'Home Maid', category: 'Kitchen & Cooking', logo: '/assets/leftovers/48.png' },
+    { name: 'Queen Of Cakes', category: 'Kitchen & Cooking', logo: '/assets/leftovers/47.png' },
+    { name: 'Simply Eggs', category: 'Kitchen & Cooking', logo: '/assets/leftovers/49.png' },
     
     // Home Fragrance
-    { name: 'Pan Aroma', category: 'Home Fragrance', logo: '/assets/brand1.png' },
-    { name: 'Waxworks', category: 'Home Fragrance', logo: '/assets/brand1.png' },
+    { name: 'Pan Aroma', category: 'Home Fragrance', logo: '/assets/leftovers/45.png' },
+    { name: 'Waxworks', category: 'Home Fragrance', logo: '/assets/leftovers/50.png' },
     
     // Personal Care
-    { name: 'Nuage', category: 'Personal Care', logo: '/assets/brand1.png' },
-    { name: 'Elysium Spa', category: 'Personal Care', logo: '/assets/brand1.png' },
-    { name: 'Cotton Tree', category: 'Personal Care', logo: '/assets/brand1.png' },
-    { name: 'Dentiplus', category: 'Personal Care', logo: '/assets/brand1.png' },
-    { name: 'Escenti', category: 'Personal Care', logo: '/assets/brand1.png' },
-    { name: 'Swift', category: 'Personal Care', logo: '/assets/brand1.png' },
-    { name: 'Sand Away', category: 'Personal Care', logo: '/assets/brand1.png' },
-    { name: 'Fun Time', category: 'Personal Care', logo: '/assets/brand1.png' },
-    { name: 'PestShield Personal Care', category: 'Personal Care', logo: '/assets/brand1.png' },
+    { name: 'Nuage', category: 'Personal Care', logo: '/assets/leftovers/51.png' },
+    { name: 'Elysium Spa', category: 'Personal Care', logo: '/assets/leftovers/52.png' },
+    { name: 'Cotton Tree', category: 'Personal Care', logo: '/assets/leftovers/53.png' },
+    { name: 'Dentiplus', category: 'Personal Care', logo: '/assets/leftovers/54.png' },
+    { name: 'Escenti', category: 'Personal Care', logo: '/assets/leftovers/55.png' },
+    { name: 'Swift', category: 'Personal Care', logo: '/assets/leftovers/56.png' },
+    { name: 'Sand Away', category: 'Personal Care', logo: '/assets/leftovers/57.png' },
+    { name: 'Fun Time', category: 'Personal Care', logo: '/assets/leftovers/58.png' },
+    { name: 'PestShield Personal Care', category: 'Personal Care', logo: '/assets/leftovers/59.png' },
     
     // First Aid
-    { name: 'Masterplast', category: 'First Aid', logo: '/assets/brand1.png' },
-    { name: 'Hygienics', category: 'First Aid', logo: '/assets/brand1.png' },
-    { name: 'Easy Read', category: 'First Aid', logo: '/assets/brand1.png' },
+    { name: 'Masterplast', category: 'First Aid', logo: '/assets/leftovers/60.png' },
+    { name: 'Hygienics', category: 'First Aid', logo: '/assets/leftovers/61.png' },
+    { name: 'Easy Read', category: 'First Aid', logo: '/assets/leftovers/62.png' },
     
     // Pet Treats & Toys
-    { name: 'Munch & Crunch', category: 'Pet Treats & Toys', logo: '/assets/brand1.png' },
-    { name: 'Pride & Groom', category: 'Pet Treats & Toys', logo: '/assets/brand1.png' },
-    { name: 'Feed Me!', category: 'Pet Treats & Toys', logo: '/assets/brand1.png' },
+    { name: 'Munch & Crunch', category: 'Pet Treats & Toys', logo: '/assets/leftovers/64.png' },
+    { name: 'Pride & Groom', category: 'Pet Treats & Toys', logo: '/assets/leftovers/63.png' },
+    { name: 'Feed Me!', category: 'Pet Treats & Toys', logo: '/assets/leftovers/65.png' },
     
-    // D.I.Y.
-    { name: '151 Core Group', category: 'D.I.Y.', logo: '/assets/brand1.png' },
-    { name: '151 Coatings', category: 'D.I.Y.', logo: '/assets/brand1.png' },
-    { name: '151 Adhesives', category: 'D.I.Y.', logo: '/assets/brand1.png' },
-    { name: 'Techno Mats', category: 'D.I.Y.', logo: '/assets/brand1.png' },
-    { name: 'Love Your Wood', category: 'D.I.Y.', logo: '/assets/brand1.png' },
-    { name: '151 Decorators Tools', category: 'D.I.Y.', logo: '/assets/brand1.png' },
-    { name: 'Gorilla Filler', category: 'D.I.Y.', logo: '/assets/brand1.png' },
-    { name: '151 Professional', category: 'D.I.Y.', logo: '/assets/brand1.png' },
+    
     
     // Gardening & Pest
-    { name: 'Chatsworth', category: 'Gardening & Pest', logo: '/assets/brand1.png' },
-    { name: 'PestShield', category: 'Gardening & Pest', logo: '/assets/brand1.png' },
-    { name: 'Eazifeed', category: 'Gardening & Pest', logo: '/assets/brand1.png' },
+    { name: 'Chatsworth', category: 'Gardening & Pest', logo: '/assets/leftovers/66.png' },
+    { name: 'PestShield', category: 'Gardening & Pest', logo: '/assets/leftovers/59.png' },
+    { name: 'Eazifeed', category: 'Gardening & Pest', logo: '/assets/leftovers/67.png' },
     
     // Car Care
-    { name: 'Car Pride', category: 'Car Care', logo: '/assets/brand1.png' },
-    { name: 'Chupa Chups', category: 'Car Care', logo: '/assets/brand1.png' },
+    { name: 'Car Pride', category: 'Car Care', logo: '/assets/leftovers/81.png' },
+    { name: 'Chupa Chups', category: 'Car Care', logo: '/assets/leftovers/82.png' },
     
     // Hair & Grooming
-    { name: 'Rolls Razor', category: 'Hair & Grooming', logo: '/assets/brand1.png' },
-    { name: 'Head Funk', category: 'Hair & Grooming', logo: '/assets/brand1.png' },
-    { name: 'Enrico Shonalli', category: 'Hair & Grooming', logo: '/assets/brand1.png' },
-    { name: 'Jolly Good Grooming', category: 'Hair & Grooming', logo: '/assets/brand1.png' },
-    { name: 'Nuage Hair', category: 'Hair & Grooming', logo: '/assets/brand1.png' },
-    { name: 'Escenti Kids', category: 'Hair & Grooming', logo: '/assets/brand1.png' },
-    { name: 'Fruit Fusion', category: 'Hair & Grooming', logo: '/assets/brand1.png' },
+    { name: 'Rolls Razor', category: 'Hair & Grooming', logo: '/assets/leftovers/68.png' },
+    { name: 'Head Funk', category: 'Hair & Grooming', logo: '/assets/leftovers/69.png' },
+    { name: 'Enrico Shonalli', category: 'Hair & Grooming', logo: '/assets/leftovers/70.png' },
+    { name: 'Jolly Good Grooming', category: 'Hair & Grooming', logo: '/assets/leftovers/71.png' },
+    { name: 'Nuage Hair', category: 'Hair & Grooming', logo: '/assets/leftovers/73.png' },
+    { name: 'Escenti Kids', category: 'Hair & Grooming', logo: '/assets/leftovers/72.png' },
+    { name: 'Fruit Fusion', category: 'Hair & Grooming', logo: '/assets/leftovers/75.png' },
     
     // Haberdashery
-    { name: 'Sewing Box', category: 'Haberdashery', logo: '/assets/brand1.png' },
+    { name: 'Sewing Box', category: 'Haberdashery', logo: '/assets/leftovers/74.png' },
     
     // Stationery & Craft
-    { name: 'Chiltern Wove', category: 'Stationery & Craft', logo: '/assets/brand1.png' },
-    { name: '151 Artist', category: 'Stationery & Craft', logo: '/assets/brand1.png' },
+    { name: 'Chiltern Wove', category: 'Stationery & Craft', logo: '/assets/leftovers/76.png' },
     
     // Shoe Care
-    { name: 'Jump', category: 'Shoe Care', logo: '/assets/brand1.png' },
-    { name: 'Out & About', category: 'Shoe Care', logo: '/assets/brand1.png' },
-    { name: 'Urban Kicks', category: 'Shoe Care', logo: '/assets/brand1.png' },
+    { name: 'Jump', category: 'Shoe Care', logo: '/assets/leftovers/77.png' },
+    { name: 'Out & About', category: 'Shoe Care', logo: '/assets/leftovers/78.png' },
+    { name: 'Urban Kicks', category: 'Shoe Care', logo: '/assets/leftovers/79.png' },
     
     // Hair & Grooming (from otherbrands)
     { name: 'VO5', category: 'Hair & Grooming', logo: '/assets/otherbrands/VO5.png' },
@@ -153,9 +141,11 @@ const Brands = () => {
     { name: 'Hachet Livre UK', category: 'Books', logo: '/assets/bookswholesaler/5.png' }
   ];
 
-  const filteredBrands = selectedCategory === 'All'
-    ? brands
-    : brands.filter(brand => brand.category === selectedCategory);
+  // Group brands by category
+  const brandsByCategory = categories.map(category => ({
+    category,
+    brands: brands.filter(brand => brand.category === category)
+  })).filter(group => group.brands.length > 0);
 
   return (
     <div className="min-h-screen">
@@ -173,53 +163,34 @@ const Brands = () => {
         </div>
       </section>
 
-      <section className="py-8 bg-white border-b border-gray-200 sticky top-[140px] z-40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap justify-center gap-3">
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                className={`px-6 py-2 rounded-full font-semibold transition ${
-                  selectedCategory === category
-                    ? 'bg-[#002D62] text-white'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                }`}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
-            {filteredBrands.map((brand, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300 flex flex-col items-center justify-center min-h-[280px]"
-              >
-                <div className="text-sm font-semibold text-gray-500 mb-4 text-center w-full">
-                  {brand.name}®
-                </div>
-                <div className="flex-1 flex items-center justify-center w-full">
-                  <img
-                    src={brand.logo}
-                    alt={brand.name}
-                    className="max-w-full max-h-32 object-contain"
-                  />
-                </div>
+          {brandsByCategory.map(({ category, brands }, categoryIndex) => (
+            <div key={category} className={categoryIndex > 0 ? 'mt-20' : ''}>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#002D62] mb-8 pb-4 border-b-2 border-gray-200">
+                {category}
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 mt-8">
+                {brands.map((brand, index) => (
+                  <div
+                    key={index}
+                    className="bg-white rounded-xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300 flex flex-col items-center justify-center min-h-[280px]"
+                  >
+                    <div className="text-sm font-semibold text-gray-500 mb-4 text-center w-full">
+                      {brand.name}®
+                    </div>
+                    <div className="flex-1 flex items-center justify-center w-full">
+                      <img
+                        src={brand.logo}
+                        alt={brand.name}
+                        className="max-w-full max-h-32 object-contain"
+                      />
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-
-          {filteredBrands.length === 0 && (
-            <div className="text-center py-16">
-              <p className="text-xl text-gray-600">No brands found in this category.</p>
             </div>
-          )}
+          ))}
         </div>
       </section>
 

@@ -15,12 +15,39 @@ const Contact = () => {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
+    setLoading(true);
+    setError('');
+
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      // Check if response has content
+      const contentType = response.headers.get('content-type');
+      if (!contentType || !contentType.includes('application/json')) {
+        const text = await response.text();
+        throw new Error(`Server error: ${text || 'Invalid response format'}`);
+      }
+
+      // Check if response is ok before parsing
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({ error: 'Unknown error occurred' }));
+        throw new Error(errorData.error || `Server error: ${response.status}`);
+      }
+
+      const data = await response.json();
+
+      setSubmitted(true);
       setFormData({
         name: '',
         email: '',
@@ -28,7 +55,17 @@ const Contact = () => {
         department: 'sales',
         message: ''
       });
-    }, 3000);
+
+      setTimeout(() => {
+        setSubmitted(false);
+      }, 5000);
+    } catch (err) {
+      const errorMessage = err instanceof Error ? err.message : 'An error occurred. Please try again.';
+      setError(errorMessage);
+      console.error('Error submitting form:', err);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -42,17 +79,17 @@ const Contact = () => {
     {
       icon: Users,
       name: 'Sales',
-      email: 'hello@shopulence.com'
+      email: 'info@shopulence.com'
     },
     {
       icon: Headphones,
       name: 'Support',
-      email: 'hello@shopulence.com'
+      email: 'info@shopulence.com'
     },
     {
       icon: Building2,
-      name: 'Press & Media',
-      email: 'hello@shopulence.com'
+      name: 'Media',
+      email: 'info@shopulence.com'
     }
   ];
 
@@ -99,8 +136,8 @@ const Contact = () => {
                     <Mail size={24} className="text-[#002D62] mr-3 flex-shrink-0" />
                     <h3 className="font-semibold text-lg">Email</h3>
                   </div>
-                  <a href="mailto:hello@shopulence.com" className="text-gray-600 hover:text-[#002D62] transition">
-                    hello@shopulence.com
+                  <a href="mailto:info@shopulence.com" className="text-gray-600 hover:text-[#002D62] transition">
+                    info@shopulence.com
                   </a>
                 </div>
               </div>
@@ -116,6 +153,11 @@ const Contact = () => {
                 <div className="bg-green-50 border border-green-200 text-green-800 px-6 py-4 rounded-lg">
                   <p className="font-semibold">Thank you for your message!</p>
                   <p className="text-sm">We'll get back to you shortly.</p>
+                </div>
+              ) : error ? (
+                <div className="bg-red-50 border border-red-200 text-red-800 px-6 py-4 rounded-lg">
+                  <p className="font-semibold">Error</p>
+                  <p className="text-sm">{error}</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -204,10 +246,11 @@ const Contact = () => {
 
                   <button
                     type="submit"
-                    className="w-full bg-[#002D62] text-white px-8 py-4 rounded-md font-semibold hover:bg-[#003d82] transition flex items-center justify-center"
+                    disabled={loading}
+                    className="w-full bg-[#002D62] text-white px-8 py-4 rounded-md font-semibold hover:bg-[#003d82] transition flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    Send Message
-                    <Send size={18} className="ml-2" />
+                    {loading ? 'Sending...' : 'Send Message'}
+                    {!loading && <Send size={18} className="ml-2" />}
                   </button>
                 </form>
               )}

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronLeft, ChevronRight, Package, Truck, Shield, Users, Sparkles, Wrench, Heart } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Package, Truck, Shield, Users, Sparkles, Wrench, Heart, Star, Award, TrendingUp, ShoppingBag, Building2, Car, Scissors, BookOpen } from 'lucide-react';
 import FAQ from '../components/FAQ';
 
 const Home = () => {
@@ -191,6 +191,59 @@ const Home = () => {
         </div>
       </section>
 
+      <section className="py-20 bg-gradient-to-br from-[#002D62] to-[#003d82] text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">Our Brands Portfolio</h2>
+              <p className="text-xl text-gray-200 mb-8 leading-relaxed">
+                We partner with leading manufacturers and trusted brands across multiple industries. 
+                From household essentials to professional tools, our extensive brand portfolio ensures 
+                you have access to quality products your customers trust.
+              </p>
+              <div className="grid grid-cols-2 gap-6 mb-8">
+                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                  <div className="text-3xl font-bold mb-2">60+</div>
+                  <div className="text-gray-200">Trusted Brands</div>
+                </div>
+                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                  <div className="text-3xl font-bold mb-2">14</div>
+                  <div className="text-gray-200">Categories</div>
+                </div>
+              </div>
+              <Link
+                to="/brands"
+                className="inline-block bg-white text-[#002D62] px-8 py-4 rounded-md font-semibold text-lg hover:bg-gray-100 transition"
+              >
+                View All Brands
+              </Link>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
+                <Star className="mx-auto mb-3" size={32} />
+                <h3 className="font-bold text-lg mb-2">Premium Quality</h3>
+                <p className="text-sm text-gray-200">Industry-leading standards</p>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
+                <Award className="mx-auto mb-3" size={32} />
+                <h3 className="font-bold text-lg mb-2">Certified Brands</h3>
+                <p className="text-sm text-gray-200">Trusted by professionals</p>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
+                <TrendingUp className="mx-auto mb-3" size={32} />
+                <h3 className="font-bold text-lg mb-2">Growing Range</h3>
+                <p className="text-sm text-gray-200">New brands added regularly</p>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center">
+                <ShoppingBag className="mx-auto mb-3" size={32} />
+                <h3 className="font-bold text-lg mb-2">Wide Selection</h3>
+                <p className="text-sm text-gray-200">500+ products available</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-20 bg-[#F3F4F6]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -229,6 +282,127 @@ const Home = () => {
           >
             Get in Touch
           </Link>
+        </div>
+      </section>
+
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-[#002D62] mb-4">Shop by Category</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Browse our comprehensive product categories and find exactly what you need for your business
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">
+            <Link
+              to="/brands"
+              className="group bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl hover:shadow-lg transition-all duration-300 text-center"
+            >
+              <Sparkles className="mx-auto mb-3 text-[#002D62] group-hover:scale-110 transition-transform" size={32} />
+              <h3 className="font-semibold text-[#002D62] text-sm">Household Cleaning</h3>
+            </Link>
+            <Link
+              to="/brands"
+              className="group bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-xl hover:shadow-lg transition-all duration-300 text-center"
+            >
+              <Wrench className="mx-auto mb-3 text-[#002D62] group-hover:scale-110 transition-transform" size={32} />
+              <h3 className="font-semibold text-[#002D62] text-sm">Kitchen & Cooking</h3>
+            </Link>
+            <Link
+              to="/brands"
+              className="group bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl hover:shadow-lg transition-all duration-300 text-center"
+            >
+              <Building2 className="mx-auto mb-3 text-[#002D62] group-hover:scale-110 transition-transform" size={32} />
+              <h3 className="font-semibold text-[#002D62] text-sm">Home Fragrance</h3>
+            </Link>
+            <Link
+              to="/brands"
+              className="group bg-gradient-to-br from-pink-50 to-pink-100 p-6 rounded-xl hover:shadow-lg transition-all duration-300 text-center"
+            >
+              <Heart className="mx-auto mb-3 text-[#002D62] group-hover:scale-110 transition-transform" size={32} />
+              <h3 className="font-semibold text-[#002D62] text-sm">Personal Care</h3>
+            </Link>
+            <Link
+              to="/brands"
+              className="group bg-gradient-to-br from-red-50 to-red-100 p-6 rounded-xl hover:shadow-lg transition-all duration-300 text-center"
+            >
+              <Shield className="mx-auto mb-3 text-[#002D62] group-hover:scale-110 transition-transform" size={32} />
+              <h3 className="font-semibold text-[#002D62] text-sm">First Aid</h3>
+            </Link>
+            <Link
+              to="/brands"
+              className="group bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl hover:shadow-lg transition-all duration-300 text-center"
+            >
+              <Car className="mx-auto mb-3 text-[#002D62] group-hover:scale-110 transition-transform" size={32} />
+              <h3 className="font-semibold text-[#002D62] text-sm">Car Care</h3>
+            </Link>
+            <Link
+              to="/brands"
+              className="group bg-gradient-to-br from-indigo-50 to-indigo-100 p-6 rounded-xl hover:shadow-lg transition-all duration-300 text-center"
+            >
+              <Scissors className="mx-auto mb-3 text-[#002D62] group-hover:scale-110 transition-transform" size={32} />
+              <h3 className="font-semibold text-[#002D62] text-sm">Hair & Grooming</h3>
+            </Link>
+            <Link
+              to="/brands"
+              className="group bg-gradient-to-br from-yellow-50 to-yellow-100 p-6 rounded-xl hover:shadow-lg transition-all duration-300 text-center"
+            >
+              <Package className="mx-auto mb-3 text-[#002D62] group-hover:scale-110 transition-transform" size={32} />
+              <h3 className="font-semibold text-[#002D62] text-sm">Pet Treats</h3>
+            </Link>
+            <Link
+              to="/brands"
+              className="group bg-gradient-to-br from-teal-50 to-teal-100 p-6 rounded-xl hover:shadow-lg transition-all duration-300 text-center"
+            >
+              <Wrench className="mx-auto mb-3 text-[#002D62] group-hover:scale-110 transition-transform" size={32} />
+              <h3 className="font-semibold text-[#002D62] text-sm">D.I.Y.</h3>
+            </Link>
+            <Link
+              to="/brands"
+              className="group bg-gradient-to-br from-emerald-50 to-emerald-100 p-6 rounded-xl hover:shadow-lg transition-all duration-300 text-center"
+            >
+              <Sparkles className="mx-auto mb-3 text-[#002D62] group-hover:scale-110 transition-transform" size={32} />
+              <h3 className="font-semibold text-[#002D62] text-sm">Gardening</h3>
+            </Link>
+            <Link
+              to="/brands"
+              className="group bg-gradient-to-br from-cyan-50 to-cyan-100 p-6 rounded-xl hover:shadow-lg transition-all duration-300 text-center"
+            >
+              <Scissors className="mx-auto mb-3 text-[#002D62] group-hover:scale-110 transition-transform" size={32} />
+              <h3 className="font-semibold text-[#002D62] text-sm">Haberdashery</h3>
+            </Link>
+            <Link
+              to="/brands"
+              className="group bg-gradient-to-br from-violet-50 to-violet-100 p-6 rounded-xl hover:shadow-lg transition-all duration-300 text-center"
+            >
+              <Package className="mx-auto mb-3 text-[#002D62] group-hover:scale-110 transition-transform" size={32} />
+              <h3 className="font-semibold text-[#002D62] text-sm">Stationery</h3>
+            </Link>
+            <Link
+              to="/brands"
+              className="group bg-gradient-to-br from-rose-50 to-rose-100 p-6 rounded-xl hover:shadow-lg transition-all duration-300 text-center"
+            >
+              <Car className="mx-auto mb-3 text-[#002D62] group-hover:scale-110 transition-transform" size={32} />
+              <h3 className="font-semibold text-[#002D62] text-sm">Shoe Care</h3>
+            </Link>
+            <Link
+              to="/brands"
+              className="group bg-gradient-to-br from-amber-50 to-amber-100 p-6 rounded-xl hover:shadow-lg transition-all duration-300 text-center"
+            >
+              <BookOpen className="mx-auto mb-3 text-[#002D62] group-hover:scale-110 transition-transform" size={32} />
+              <h3 className="font-semibold text-[#002D62] text-sm">Books</h3>
+            </Link>
+          </div>
+
+          <div className="text-center mt-12">
+            <Link
+              to="/brands"
+              className="inline-block text-[#002D62] font-semibold text-lg hover:underline"
+            >
+              View All Categories →
+            </Link>
+          </div>
         </div>
       </section>
 
