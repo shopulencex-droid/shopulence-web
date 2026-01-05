@@ -36,7 +36,18 @@ const Contact = () => {
       const contentType = response.headers.get('content-type');
       if (!contentType || !contentType.includes('application/json')) {
         const text = await response.text();
-        throw new Error(`Server error: ${text || 'Invalid response format'}`);
+        console.error('Non-JSON response:', {
+          status: response.status,
+          statusText: response.statusText,
+          contentType,
+          text: text.substring(0, 200)
+        });
+        
+        if (response.status === 404) {
+          throw new Error('API endpoint not found. Please check your deployment and ensure the API route is configured correctly.');
+        }
+        
+        throw new Error(`Server error (${response.status}): ${text.substring(0, 100) || 'Invalid response format'}`);
       }
 
       // Check if response is ok before parsing
@@ -45,7 +56,7 @@ const Contact = () => {
         throw new Error(errorData.error || `Server error: ${response.status}`);
       }
 
-      const data = await response.json();
+      await response.json(); // Response is successful, no need to use the data
 
       setSubmitted(true);
       setFormData({
