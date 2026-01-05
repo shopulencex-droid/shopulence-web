@@ -21,7 +21,8 @@ const Brands = () => {
     'Hair & Grooming',
     'Haberdashery',
     'Stationery & Craft',
-    'Shoe Care'
+    'Shoe Care',
+    'Books'
   ];
 
   const brands = [
@@ -107,7 +108,49 @@ const Brands = () => {
     // Shoe Care
     { name: 'Jump', category: 'Shoe Care', logo: '/assets/brand1.png' },
     { name: 'Out & About', category: 'Shoe Care', logo: '/assets/brand1.png' },
-    { name: 'Urban Kicks', category: 'Shoe Care', logo: '/assets/brand1.png' }
+    { name: 'Urban Kicks', category: 'Shoe Care', logo: '/assets/brand1.png' },
+    
+    // Hair & Grooming (from otherbrands)
+    { name: 'VO5', category: 'Hair & Grooming', logo: '/assets/otherbrands/VO5.png' },
+    { name: 'L\'Oréal', category: 'Hair & Grooming', logo: '/assets/otherbrands/loreal.png' },
+    { name: 'milbon', category: 'Hair & Grooming', logo: '/assets/otherbrands/milbon.png' },
+    { name: 'DARIYA', category: 'Hair & Grooming', logo: '/assets/otherbrands/DARIYA.png' },
+    { name: 'Miche Bloomin', category: 'Hair & Grooming', logo: '/assets/otherbrands/Miche Bloomin.png' },
+    
+    // Personal Care (from otherbrands)
+    { name: 'Always', category: 'Personal Care', logo: '/assets/otherbrands/Always.png' },
+    { name: 'Nivea', category: 'Personal Care', logo: '/assets/otherbrands/Nivea.png' },
+    { name: 'Oral b', category: 'Personal Care', logo: '/assets/otherbrands/Oral b.png' },
+    { name: 'APAGARD', category: 'Personal Care', logo: '/assets/otherbrands/APAGARD.png' },
+    { name: 'Anua', category: 'Personal Care', logo: '/assets/otherbrands/Anua.png' },
+    { name: 'AXIS-Y', category: 'Personal Care', logo: '/assets/otherbrands/AXIS-Y.png' },
+    { name: 'BEAUTY OF JOSEON', category: 'Personal Care', logo: '/assets/otherbrands/BEAUTY OF JOSEON.png' },
+    { name: 'COSRX', category: 'Personal Care', logo: '/assets/otherbrands/COSRX.png' },
+    { name: 'haruharu wonder', category: 'Personal Care', logo: '/assets/otherbrands/haruharu wonder.png' },
+    { name: 'INTO YOU', category: 'Personal Care', logo: '/assets/otherbrands/INTO YOU.png' },
+    { name: 'JOOCYEE', category: 'Personal Care', logo: '/assets/otherbrands/JOOCYEE.png' },
+    { name: 'JUDYDOLL', category: 'Personal Care', logo: '/assets/otherbrands/JUDYDOLL.png' },
+    { name: 'Kisocare', category: 'Personal Care', logo: '/assets/otherbrands/Kisocare.png' },
+    { name: 'KOSE', category: 'Personal Care', logo: '/assets/otherbrands/KOSE.png' },
+    { name: 'medicube', category: 'Personal Care', logo: '/assets/otherbrands/medicube.png' },
+    { name: 'mixsoon', category: 'Personal Care', logo: '/assets/otherbrands/mixsoon.png' },
+    { name: 'numbuzin', category: 'Personal Care', logo: '/assets/otherbrands/numbuzin.png' },
+    { name: 'Purito SEOUL', category: 'Personal Care', logo: '/assets/otherbrands/Purito SEOUL.png' },
+    { name: 'SKIN1004', category: 'Personal Care', logo: '/assets/otherbrands/SKIN1004.png' },
+    { name: 'TIRTIR', category: 'Personal Care', logo: '/assets/otherbrands/TIRTIR.png' },
+    { name: 'TOCOBO', category: 'Personal Care', logo: '/assets/otherbrands/TOCOBO.png' },
+    
+    // Kitchen & Cooking (from otherbrands)
+    { name: 'Nespresso', category: 'Kitchen & Cooking', logo: '/assets/otherbrands/Nespresso.png' },
+    { name: 'Nestle', category: 'Kitchen & Cooking', logo: '/assets/otherbrands/Nestle.png' },
+    { name: 'Tassimo', category: 'Kitchen & Cooking', logo: '/assets/otherbrands/Tassimo.png' },
+    
+    // Books (from bookswholesaler)
+    { name: 'Pan Macmillan', category: 'Books', logo: '/assets/bookswholesaler/1.png' },
+    { name: 'Gardners Books', category: 'Books', logo: '/assets/bookswholesaler/2.png' },
+    { name: 'Penguin Random House (PRH)', category: 'Books', logo: '/assets/bookswholesaler/3.png' },
+    { name: 'Ingram Content Group', category: 'Books', logo: '/assets/bookswholesaler/4.png' },
+    { name: 'Hachet Livre UK', category: 'Books', logo: '/assets/bookswholesaler/5.png' }
   ];
 
   const filteredBrands = selectedCategory === 'All'
