@@ -39,17 +39,42 @@ const Footer = () => {
                   Contact
                 </Link>
               </li>
+              <li>
+                <Link to="/contact" className="text-gray-300 hover:text-white transition font-semibold">
+                  Trade Inquiries
+                </Link>
+              </li>
             </ul>
           </div>
 
           <div>
             <h3 className="font-semibold text-lg mb-4">Categories</h3>
             <ul className="space-y-2 text-sm">
-              <li className="text-gray-300">Cleaning Products</li>
-              <li className="text-gray-300">DIY & Tools</li>
-              <li className="text-gray-300">Pet Care</li>
-              <li className="text-gray-300">Health & Beauty</li>
-              <li className="text-gray-300">Household Essentials</li>
+              <li>
+                <Link to="/brands" className="text-gray-300 hover:text-white transition">
+                  Household Cleaning
+                </Link>
+              </li>
+              <li>
+                <Link to="/brands" className="text-gray-300 hover:text-white transition">
+                  Personal Care
+                </Link>
+              </li>
+              <li>
+                <Link to="/brands" className="text-gray-300 hover:text-white transition">
+                  Kitchen & Cooking
+                </Link>
+              </li>
+              <li>
+                <Link to="/brands" className="text-gray-300 hover:text-white transition">
+                  Hair & Grooming
+                </Link>
+              </li>
+              <li>
+                <Link to="/brands" className="text-gray-300 hover:text-white transition">
+                  Pet Treats & Toys
+                </Link>
+              </li>
             </ul>
           </div>
 

@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const Brands = () => {
   useEffect(() => {
@@ -201,9 +202,12 @@ const Brands = () => {
             <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
               Get in touch with our trade team to discuss partnership opportunities and pricing
             </p>
-            <button className="bg-white text-[#002D62] px-8 py-4 rounded-md font-semibold text-lg hover:bg-gray-100 transition">
+            <Link 
+              to="/contact"
+              className="inline-block bg-white text-[#002D62] px-8 py-4 rounded-md font-semibold text-lg hover:bg-gray-100 transition"
+            >
               Contact Trade Team
-            </button>
+            </Link>
           </div>
         </div>
       </section>
