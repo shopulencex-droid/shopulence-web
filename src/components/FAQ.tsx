@@ -11,11 +11,11 @@ const FAQ = () => {
     },
     {
       question: 'How can I become a trade partner?',
-      answer: 'To become a trade partner, simply contact us through our contact form or email us at info@shopulence.com. Our team will get in touch with you to discuss partnership opportunities, pricing, and requirements. We welcome retailers and trade professionals across the UK and Europe.'
+      answer: 'To become a trade partner, simply contact us through our contact form or email us at info@shopulence.com. Our team will get in touch with you to discuss partnership opportunities, pricing, and requirements. We welcome retailers and trade professionals across the UK.'
     },
     {
       question: 'What are your delivery options?',
-      answer: 'We offer fast and reliable delivery services across the UK and Europe. Next-day delivery is available for UK mainland orders. Our 200,000 square foot distribution center ensures efficient order processing and timely delivery to all our trade partners.'
+      answer: 'We offer fast and reliable delivery services across the UK. Next-day delivery is available for UK mainland orders. Our 200,000 square foot distribution center ensures efficient order processing and timely delivery to all our trade partners.'
     },
     {
       question: 'Do you offer minimum order quantities?',

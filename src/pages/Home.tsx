@@ -1,10 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronLeft, ChevronRight, Package, Truck, Shield, Users, Sparkles, Wrench, Heart, Star, Award, TrendingUp, ShoppingBag, Building2, Car, Scissors, BookOpen } from 'lucide-react';
 import FAQ from '../components/FAQ';
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [categoryScrollPosition, setCategoryScrollPosition] = useState(0);
+  const categoryScrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     document.title = 'Shopulence | Home';
@@ -25,7 +27,7 @@ const Home = () => {
     },
     {
       title: '200,000 sq ft Distribution',
-      subtitle: 'Fast, reliable delivery across the UK and Europe',
+      subtitle: 'Fast, reliable delivery across the UK',
       image: 'https://images.pexels.com/photos/4483610/pexels-photo-4483610.jpeg?auto=compress&cs=tinysrgb&w=1920',
       cta: 'Learn More'
     }
@@ -37,6 +39,39 @@ const Home = () => {
     }, 5000);
     return () => clearInterval(timer);
   }, []);
+
+  // Auto-scroll categories
+  useEffect(() => {
+    const categoryTimer = setInterval(() => {
+      if (categoryScrollRef.current) {
+        const cardWidth = 180; // width of each card
+        const gap = 24; // gap between cards (1.5rem = 24px)
+        const scrollAmount = cardWidth + gap;
+        const maxScroll = categoryScrollRef.current.scrollWidth - categoryScrollRef.current.clientWidth;
+        
+        setCategoryScrollPosition((prev) => {
+          const newPosition = prev + scrollAmount;
+          if (newPosition >= maxScroll) {
+            // Reset to start for infinite loop
+            return 0;
+          }
+          return newPosition;
+        });
+      }
+    }, 1500); // Auto-scroll every 2 seconds
+    
+    return () => clearInterval(categoryTimer);
+  }, []);
+
+  // Update scroll position
+  useEffect(() => {
+    if (categoryScrollRef.current) {
+      categoryScrollRef.current.scrollTo({
+        left: categoryScrollPosition,
+        behavior: 'smooth'
+      });
+    }
+  }, [categoryScrollPosition]);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -275,7 +310,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold mb-4">Ready to Partner With Us?</h2>
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Join hundreds of satisfied trade partners and retailers across the UK and Europe
+            Join hundreds of satisfied trade partners and retailers across the UK
           </p>
           <Link
             to="/contact"
@@ -295,105 +330,131 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">
-            <Link
-              to="/brands"
-              className="group bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl hover:shadow-lg transition-all duration-300 text-center"
+          <div className="relative flex justify-center">
+            <div 
+              ref={categoryScrollRef}
+              className="overflow-hidden scrollbar-hide scroll-smooth pb-4 category-scroll"
+              style={{ 
+                width: 'calc(180px * 6 + 24px * 5)', // Exactly 6 cards + 5 gaps
+                maxWidth: '100%',
+                scrollBehavior: 'smooth'
+              }}
             >
-              <Sparkles className="mx-auto mb-3 text-[#002D62] group-hover:scale-110 transition-transform" size={32} />
-              <h3 className="font-semibold text-[#002D62] text-sm">Household Cleaning</h3>
-            </Link>
-            <Link
-              to="/brands"
-              className="group bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-xl hover:shadow-lg transition-all duration-300 text-center"
-            >
-              <Wrench className="mx-auto mb-3 text-[#002D62] group-hover:scale-110 transition-transform" size={32} />
-              <h3 className="font-semibold text-[#002D62] text-sm">Kitchen & Cooking</h3>
-            </Link>
-            <Link
-              to="/brands"
-              className="group bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl hover:shadow-lg transition-all duration-300 text-center"
-            >
-              <Building2 className="mx-auto mb-3 text-[#002D62] group-hover:scale-110 transition-transform" size={32} />
-              <h3 className="font-semibold text-[#002D62] text-sm">Home Fragrance</h3>
-            </Link>
-            <Link
-              to="/brands"
-              className="group bg-gradient-to-br from-pink-50 to-pink-100 p-6 rounded-xl hover:shadow-lg transition-all duration-300 text-center"
-            >
-              <Heart className="mx-auto mb-3 text-[#002D62] group-hover:scale-110 transition-transform" size={32} />
-              <h3 className="font-semibold text-[#002D62] text-sm">Personal Care</h3>
-            </Link>
-            <Link
-              to="/brands"
-              className="group bg-gradient-to-br from-red-50 to-red-100 p-6 rounded-xl hover:shadow-lg transition-all duration-300 text-center"
-            >
-              <Shield className="mx-auto mb-3 text-[#002D62] group-hover:scale-110 transition-transform" size={32} />
-              <h3 className="font-semibold text-[#002D62] text-sm">First Aid</h3>
-            </Link>
-            <Link
-              to="/brands"
-              className="group bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl hover:shadow-lg transition-all duration-300 text-center"
-            >
-              <Car className="mx-auto mb-3 text-[#002D62] group-hover:scale-110 transition-transform" size={32} />
-              <h3 className="font-semibold text-[#002D62] text-sm">Car Care</h3>
-            </Link>
-            <Link
-              to="/brands"
-              className="group bg-gradient-to-br from-indigo-50 to-indigo-100 p-6 rounded-xl hover:shadow-lg transition-all duration-300 text-center"
-            >
-              <Scissors className="mx-auto mb-3 text-[#002D62] group-hover:scale-110 transition-transform" size={32} />
-              <h3 className="font-semibold text-[#002D62] text-sm">Hair & Grooming</h3>
-            </Link>
-            <Link
-              to="/brands"
-              className="group bg-gradient-to-br from-yellow-50 to-yellow-100 p-6 rounded-xl hover:shadow-lg transition-all duration-300 text-center"
-            >
-              <Package className="mx-auto mb-3 text-[#002D62] group-hover:scale-110 transition-transform" size={32} />
-              <h3 className="font-semibold text-[#002D62] text-sm">Pet Treats</h3>
-            </Link>
-            <Link
-              to="/brands"
-              className="group bg-gradient-to-br from-teal-50 to-teal-100 p-6 rounded-xl hover:shadow-lg transition-all duration-300 text-center"
-            >
-              <Wrench className="mx-auto mb-3 text-[#002D62] group-hover:scale-110 transition-transform" size={32} />
-              <h3 className="font-semibold text-[#002D62] text-sm">D.I.Y.</h3>
-            </Link>
-            <Link
-              to="/brands"
-              className="group bg-gradient-to-br from-emerald-50 to-emerald-100 p-6 rounded-xl hover:shadow-lg transition-all duration-300 text-center"
-            >
-              <Sparkles className="mx-auto mb-3 text-[#002D62] group-hover:scale-110 transition-transform" size={32} />
-              <h3 className="font-semibold text-[#002D62] text-sm">Gardening</h3>
-            </Link>
-            <Link
-              to="/brands"
-              className="group bg-gradient-to-br from-cyan-50 to-cyan-100 p-6 rounded-xl hover:shadow-lg transition-all duration-300 text-center"
-            >
-              <Scissors className="mx-auto mb-3 text-[#002D62] group-hover:scale-110 transition-transform" size={32} />
-              <h3 className="font-semibold text-[#002D62] text-sm">Haberdashery</h3>
-            </Link>
-            <Link
-              to="/brands"
-              className="group bg-gradient-to-br from-violet-50 to-violet-100 p-6 rounded-xl hover:shadow-lg transition-all duration-300 text-center"
-            >
-              <Package className="mx-auto mb-3 text-[#002D62] group-hover:scale-110 transition-transform" size={32} />
-              <h3 className="font-semibold text-[#002D62] text-sm">Stationery</h3>
-            </Link>
-            <Link
-              to="/brands"
-              className="group bg-gradient-to-br from-rose-50 to-rose-100 p-6 rounded-xl hover:shadow-lg transition-all duration-300 text-center"
-            >
-              <Car className="mx-auto mb-3 text-[#002D62] group-hover:scale-110 transition-transform" size={32} />
-              <h3 className="font-semibold text-[#002D62] text-sm">Shoe Care</h3>
-            </Link>
-            <Link
-              to="/brands"
-              className="group bg-gradient-to-br from-amber-50 to-amber-100 p-6 rounded-xl hover:shadow-lg transition-all duration-300 text-center"
-            >
-              <BookOpen className="mx-auto mb-3 text-[#002D62] group-hover:scale-110 transition-transform" size={32} />
-              <h3 className="font-semibold text-[#002D62] text-sm">Books</h3>
-            </Link>
+              <div className="flex gap-6" style={{ width: 'max-content' }}>
+                <Link
+                  to="/brands"
+                  className="group bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl hover:shadow-lg transition-all duration-300 text-center flex-shrink-0 snap-start"
+                  style={{ width: '180px' }}
+                >
+                  <Sparkles className="mx-auto mb-3 text-[#002D62] group-hover:scale-110 transition-transform" size={32} />
+                  <h3 className="font-semibold text-[#002D62] text-sm">Household Cleaning</h3>
+                </Link>
+                <Link
+                  to="/brands"
+                  className="group bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-xl hover:shadow-lg transition-all duration-300 text-center flex-shrink-0 snap-start"
+                  style={{ width: '180px' }}
+                >
+                  <Wrench className="mx-auto mb-3 text-[#002D62] group-hover:scale-110 transition-transform" size={32} />
+                  <h3 className="font-semibold text-[#002D62] text-sm">Kitchen & Cooking</h3>
+                </Link>
+                <Link
+                  to="/brands"
+                  className="group bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl hover:shadow-lg transition-all duration-300 text-center flex-shrink-0 snap-start"
+                  style={{ width: '180px' }}
+                >
+                  <Building2 className="mx-auto mb-3 text-[#002D62] group-hover:scale-110 transition-transform" size={32} />
+                  <h3 className="font-semibold text-[#002D62] text-sm">Home Fragrance</h3>
+                </Link>
+                <Link
+                  to="/brands"
+                  className="group bg-gradient-to-br from-pink-50 to-pink-100 p-6 rounded-xl hover:shadow-lg transition-all duration-300 text-center flex-shrink-0 snap-start"
+                  style={{ width: '180px' }}
+                >
+                  <Heart className="mx-auto mb-3 text-[#002D62] group-hover:scale-110 transition-transform" size={32} />
+                  <h3 className="font-semibold text-[#002D62] text-sm">Personal Care</h3>
+                </Link>
+                <Link
+                  to="/brands"
+                  className="group bg-gradient-to-br from-red-50 to-red-100 p-6 rounded-xl hover:shadow-lg transition-all duration-300 text-center flex-shrink-0 snap-start"
+                  style={{ width: '180px' }}
+                >
+                  <Shield className="mx-auto mb-3 text-[#002D62] group-hover:scale-110 transition-transform" size={32} />
+                  <h3 className="font-semibold text-[#002D62] text-sm">First Aid</h3>
+                </Link>
+                <Link
+                  to="/brands"
+                  className="group bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl hover:shadow-lg transition-all duration-300 text-center flex-shrink-0 snap-start"
+                  style={{ width: '180px' }}
+                >
+                  <Car className="mx-auto mb-3 text-[#002D62] group-hover:scale-110 transition-transform" size={32} />
+                  <h3 className="font-semibold text-[#002D62] text-sm">Car Care</h3>
+                </Link>
+                <Link
+                  to="/brands"
+                  className="group bg-gradient-to-br from-indigo-50 to-indigo-100 p-6 rounded-xl hover:shadow-lg transition-all duration-300 text-center flex-shrink-0 snap-start"
+                  style={{ width: '180px' }}
+                >
+                  <Scissors className="mx-auto mb-3 text-[#002D62] group-hover:scale-110 transition-transform" size={32} />
+                  <h3 className="font-semibold text-[#002D62] text-sm">Hair & Grooming</h3>
+                </Link>
+                <Link
+                  to="/brands"
+                  className="group bg-gradient-to-br from-yellow-50 to-yellow-100 p-6 rounded-xl hover:shadow-lg transition-all duration-300 text-center flex-shrink-0 snap-start"
+                  style={{ width: '180px' }}
+                >
+                  <Package className="mx-auto mb-3 text-[#002D62] group-hover:scale-110 transition-transform" size={32} />
+                  <h3 className="font-semibold text-[#002D62] text-sm">Pet Treats</h3>
+                </Link>
+                <Link
+                  to="/brands"
+                  className="group bg-gradient-to-br from-teal-50 to-teal-100 p-6 rounded-xl hover:shadow-lg transition-all duration-300 text-center flex-shrink-0 snap-start"
+                  style={{ width: '180px' }}
+                >
+                  <Wrench className="mx-auto mb-3 text-[#002D62] group-hover:scale-110 transition-transform" size={32} />
+                  <h3 className="font-semibold text-[#002D62] text-sm">D.I.Y.</h3>
+                </Link>
+                <Link
+                  to="/brands"
+                  className="group bg-gradient-to-br from-emerald-50 to-emerald-100 p-6 rounded-xl hover:shadow-lg transition-all duration-300 text-center flex-shrink-0 snap-start"
+                  style={{ width: '180px' }}
+                >
+                  <Sparkles className="mx-auto mb-3 text-[#002D62] group-hover:scale-110 transition-transform" size={32} />
+                  <h3 className="font-semibold text-[#002D62] text-sm">Gardening</h3>
+                </Link>
+                <Link
+                  to="/brands"
+                  className="group bg-gradient-to-br from-cyan-50 to-cyan-100 p-6 rounded-xl hover:shadow-lg transition-all duration-300 text-center flex-shrink-0 snap-start"
+                  style={{ width: '180px' }}
+                >
+                  <Scissors className="mx-auto mb-3 text-[#002D62] group-hover:scale-110 transition-transform" size={32} />
+                  <h3 className="font-semibold text-[#002D62] text-sm">Haberdashery</h3>
+                </Link>
+                <Link
+                  to="/brands"
+                  className="group bg-gradient-to-br from-violet-50 to-violet-100 p-6 rounded-xl hover:shadow-lg transition-all duration-300 text-center flex-shrink-0 snap-start"
+                  style={{ width: '180px' }}
+                >
+                  <Package className="mx-auto mb-3 text-[#002D62] group-hover:scale-110 transition-transform" size={32} />
+                  <h3 className="font-semibold text-[#002D62] text-sm">Stationery</h3>
+                </Link>
+                <Link
+                  to="/brands"
+                  className="group bg-gradient-to-br from-rose-50 to-rose-100 p-6 rounded-xl hover:shadow-lg transition-all duration-300 text-center flex-shrink-0 snap-start"
+                  style={{ width: '180px' }}
+                >
+                  <Car className="mx-auto mb-3 text-[#002D62] group-hover:scale-110 transition-transform" size={32} />
+                  <h3 className="font-semibold text-[#002D62] text-sm">Shoe Care</h3>
+                </Link>
+                <Link
+                  to="/brands"
+                  className="group bg-gradient-to-br from-amber-50 to-amber-100 p-6 rounded-xl hover:shadow-lg transition-all duration-300 text-center flex-shrink-0 snap-start"
+                  style={{ width: '180px' }}
+                >
+                  <BookOpen className="mx-auto mb-3 text-[#002D62] group-hover:scale-110 transition-transform" size={32} />
+                  <h3 className="font-semibold text-[#002D62] text-sm">Books</h3>
+                </Link>
+              </div>
+            </div>
           </div>
 
           <div className="text-center mt-12">
@@ -402,6 +463,119 @@ const Home = () => {
               className="inline-block text-[#002D62] font-semibold text-lg hover:underline"
             >
               View All Categories →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-[#F3F4F6]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-[#002D62] mb-4">Some Brands</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Discover some of our most popular and trusted brands
+            </p>
+          </div>
+
+          <div className="flex justify-center gap-6">
+            <Link
+              to="/brands"
+              className="group bg-white rounded-xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300 flex flex-col items-center justify-center min-h-[280px]"
+            >
+              <div className="text-sm font-semibold text-gray-500 mb-4 text-center w-full">
+                Elbow Grease®
+              </div>
+              <div className="flex-1 flex items-center justify-center w-full">
+                <img
+                  src="/assets/leftovers/35.png"
+                  alt="Elbow Grease"
+                  className="max-w-full max-h-32 object-contain"
+                />
+              </div>
+            </Link>
+            <Link
+              to="/brands"
+              className="group bg-white rounded-xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300 flex flex-col items-center justify-center min-h-[280px]"
+            >
+              <div className="text-sm font-semibold text-gray-500 mb-4 text-center w-full">
+                Duzzit®
+              </div>
+              <div className="flex-1 flex items-center justify-center w-full">
+                <img
+                  src="/assets/leftovers/36.png"
+                  alt="Duzzit"
+                  className="max-w-full max-h-32 object-contain"
+                />
+              </div>
+            </Link>
+            <Link
+              to="/brands"
+              className="group bg-white rounded-xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300 flex flex-col items-center justify-center min-h-[280px]"
+            >
+              <div className="text-sm font-semibold text-gray-500 mb-4 text-center w-full">
+                Swirl®
+              </div>
+              <div className="flex-1 flex items-center justify-center w-full">
+                <img
+                  src="/assets/leftovers/37.png"
+                  alt="Swirl"
+                  className="max-w-full max-h-32 object-contain"
+                />
+              </div>
+            </Link>
+            <Link
+              to="/brands"
+              className="group bg-white rounded-xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300 flex flex-col items-center justify-center min-h-[280px]"
+            >
+              <div className="text-sm font-semibold text-gray-500 mb-4 text-center w-full">
+                Oven Brite®
+              </div>
+              <div className="flex-1 flex items-center justify-center w-full">
+                <img
+                  src="/assets/leftovers/38.png"
+                  alt="Oven Brite"
+                  className="max-w-full max-h-32 object-contain"
+                />
+              </div>
+            </Link>
+            <Link
+              to="/brands"
+              className="group bg-white rounded-xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300 flex flex-col items-center justify-center min-h-[280px]"
+            >
+              <div className="text-sm font-semibold text-gray-500 mb-4 text-center w-full">
+                Seal-A-Pack®
+              </div>
+              <div className="flex-1 flex items-center justify-center w-full">
+                <img
+                  src="/assets/leftovers/46.png"
+                  alt="Seal-A-Pack"
+                  className="max-w-full max-h-32 object-contain"
+                />
+              </div>
+            </Link>
+            <Link
+              to="/brands"
+              className="group bg-white rounded-xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300 flex flex-col items-center justify-center min-h-[280px]"
+            >
+              <div className="text-sm font-semibold text-gray-500 mb-4 text-center w-full">
+                Home Maid®
+              </div>
+              <div className="flex-1 flex items-center justify-center w-full">
+                <img
+                  src="/assets/leftovers/48.png"
+                  alt="Home Maid"
+                  className="max-w-full max-h-32 object-contain"
+                />
+              </div>
+            </Link>
+          </div>
+
+          <div className="text-center mt-12">
+            <Link
+              to="/brands"
+              className="inline-block bg-[#002D62] text-white px-8 py-3 rounded-md font-semibold text-lg hover:bg-[#003d82] transition"
+            >
+              View All Brands →
             </Link>
           </div>
         </div>

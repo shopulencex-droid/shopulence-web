@@ -9,7 +9,7 @@ const About = () => {
   const timeline = [
     { year: '1985', title: 'Company Founded', description: 'Started as a small family-owned distribution business' },
     { year: '1995', title: 'First Major Brand', description: 'Launched our flagship cleaning brand, establishing market presence' },
-    { year: '2005', title: 'Expansion', description: 'Opened 200,000 sq ft distribution center and expanded into Europe' },
+    { year: '2005', title: 'Expansion', description: 'Opened 200,000 sq ft distribution center' },
     { year: '2015', title: 'Portfolio Growth', description: 'Acquired and developed multiple sub-brands across diverse categories' },
     { year: '2025', title: 'Industry Leader', description: 'Serving thousands of trade partners with 500+ products' }
   ];
@@ -18,7 +18,7 @@ const About = () => {
     {
       icon: Target,
       title: 'Our Mission',
-      description: 'To provide exceptional value and quality products to trade partners across the UK and Europe, building lasting relationships through reliability and innovation.'
+      description: 'To provide exceptional value and quality products to trade partners across the UK, building lasting relationships through reliability and innovation.'
     },
     {
       icon: Award,
@@ -70,7 +70,7 @@ const About = () => {
             <div>
               <h2 className="text-4xl font-bold text-[#002D62] mb-6">Who We Are</h2>
               <p className="text-lg text-gray-600 mb-4">
-                Shopulence is a leading UK-based wholesaler and manufacturer with over 40 years of industry experience. We operate from a state-of-the-art 200,000 square foot distribution center, serving trade partners across the United Kingdom and Europe.
+                Shopulence is a leading UK-based wholesaler and manufacturer with over 40 years of industry experience. We operate from a state-of-the-art 200,000 square foot distribution center, serving trade partners across the United Kingdom.
               </p>
               <p className="text-lg text-gray-600 mb-4">
                 Our diverse portfolio includes multiple trusted brands spanning cleaning products, DIY supplies, pet care, health and beauty, and household essentials. We pride ourselves on delivering exceptional value, quality, and service to retailers and trade professionals.
@@ -147,7 +147,7 @@ const About = () => {
                 Our 200,000 square foot distribution center features advanced inventory management systems, climate-controlled storage, and efficient logistics operations.
               </p>
               <p className="text-lg text-gray-200">
-                This infrastructure enables us to maintain optimal stock levels, ensure product quality, and deliver orders promptly to partners across the UK and Europe.
+                This infrastructure enables us to maintain optimal stock levels, ensure product quality, and deliver orders promptly to partners across the UK.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4">
