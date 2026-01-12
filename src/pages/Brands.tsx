@@ -101,7 +101,7 @@ const Brands = () => {
     
     // Hair & Grooming (from otherbrands)
     { name: 'VO5', category: 'Hair & Grooming', logo: '/assets/otherbrands/VO5.png' },
-    { name: 'L\'Oréal', category: 'Hair & Grooming', logo: '/assets/otherbrands/loreal.png' },
+    { name: 'L\'Oréal', category: 'Hair & Grooming', logo: '/assets/otherbrands/L\'Oréal.png' },
     { name: 'milbon', category: 'Hair & Grooming', logo: '/assets/otherbrands/milbon.png' },
     { name: 'DARIYA', category: 'Hair & Grooming', logo: '/assets/otherbrands/DARIYA.png' },
     { name: 'Miche Bloomin', category: 'Hair & Grooming', logo: '/assets/otherbrands/Miche Bloomin.png' },
@@ -150,7 +150,7 @@ const Brands = () => {
 
   return (
     <div className="min-h-screen">
-      <section className="relative h-80 bg-gradient-to-r from-[#002D62] to-[#003d82] text-white">
+      <section className="relative h-80 lg:h-[450px] xl:h-[550px] 2xl:h-[650px] bg-gradient-to-r from-[#002D62] to-[#003d82] text-white">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/4481258/pexels-photo-4481258.jpeg?auto=compress&cs=tinysrgb&w=1920')] bg-cover bg-center"></div>
         </div>
@@ -184,7 +184,17 @@ const Brands = () => {
                       <img
                         src={brand.logo}
                         alt={brand.name}
-                        className="max-w-full max-h-32 object-contain"
+                        className={`max-w-full object-contain ${
+                          ['Seal-A-Pack', 'Home Maid', 'Nuage', 'Cotton Tree', 'Dentiplus', 'Escenti', 
+                           'PestShield', 'PestShield Personal Care', 'Always', 'Oral b', 'APAGARD', 
+                           'Anua', 'AXIS-Y', 'BEAUTY OF JOSEON', 'COSRX', 'haruharu wonder', 
+                           'INTO YOU', 'JOOCYEE', 'JUDYDOLL', 'Kisocare', 'KOSE', 'medicube', 
+                           'numbuzin', 'Purito SEOUL', 'SKIN1004', 'TIRTIR', 'Masterplast', 
+                           'Hygienics', 'Eazifeed', 'Chatsworth', 'Nuage Hair', 'L\'Oréal', 
+                           'DARIYA', 'Miche Bloomin'].includes(brand.name)
+                            ? 'max-h-48' 
+                            : 'max-h-32'
+                        }`}
                       />
                     </div>
                   </div>

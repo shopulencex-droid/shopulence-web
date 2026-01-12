@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, Mail } from 'lucide-react';
+import { Menu, X, Mail, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
 import logo from '../../assets/shopulence.png';
 
 const Header = () => {
@@ -16,6 +16,20 @@ const Header = () => {
                 <Mail size={14} className="mr-1" />
                 info@shopulence.com
               </a>
+              <div className="flex items-center space-x-3 ml-4 pl-4 border-l border-white/20">
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300 transition">
+                  <Facebook size={16} />
+                </a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300 transition">
+                  <Twitter size={16} />
+                </a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300 transition">
+                  <Instagram size={16} />
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300 transition">
+                  <Linkedin size={16} />
+                </a>
+              </div>
             </div>
             <div className="text-xs">
               Your Global Supply

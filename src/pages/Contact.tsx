@@ -95,7 +95,7 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen">
-      <section className="relative h-80 bg-gradient-to-r from-[#002D62] to-[#003d82] text-white">
+      <section className="relative h-80 lg:h-[450px] xl:h-[550px] 2xl:h-[650px] bg-gradient-to-r from-[#002D62] to-[#003d82] text-white">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=1920')] bg-cover bg-center"></div>
         </div>

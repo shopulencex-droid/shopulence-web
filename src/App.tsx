@@ -7,6 +7,9 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Brands from './pages/Brands';
 import Contact from './pages/Contact';
+import TermsAndConditions from './pages/TermsAndConditions';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import ReturnsAndRefunds from './pages/ReturnsAndRefunds';
 
 function AppContent() {
   const location = useLocation();
@@ -50,6 +53,30 @@ function AppContent() {
             element={
               <AnimatedPage>
                 <Contact />
+              </AnimatedPage>
+            } 
+          />
+          <Route 
+            path="/terms-and-conditions" 
+            element={
+              <AnimatedPage>
+                <TermsAndConditions />
+              </AnimatedPage>
+            } 
+          />
+          <Route 
+            path="/privacy-policy" 
+            element={
+              <AnimatedPage>
+                <PrivacyPolicy />
+              </AnimatedPage>
+            } 
+          />
+          <Route 
+            path="/returns-and-refunds" 
+            element={
+              <AnimatedPage>
+                <ReturnsAndRefunds />
               </AnimatedPage>
             } 
           />

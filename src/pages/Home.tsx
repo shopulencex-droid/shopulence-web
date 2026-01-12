@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronLeft, ChevronRight, Package, Truck, Shield, Users, Sparkles, Wrench, Heart, Star, Award, TrendingUp, ShoppingBag, Building2, Car, Scissors, BookOpen } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Package, Truck, Shield, Users, Sparkles, Wrench, Heart, Star, Award, TrendingUp, ShoppingBag, Building2, Car, Scissors, BookOpen, UtensilsCrossed } from 'lucide-react';
 import FAQ from '../components/FAQ';
 
 const Home = () => {
@@ -14,20 +14,20 @@ const Home = () => {
 
   const slides = [
     {
-      title: 'Premium Brands for Trade Partners',
-      subtitle: 'Discover our portfolio of trusted household brands',
+      title: 'Premium Brands for Trade Partners Across the UK',
+      subtitle: 'Discover our extensive portfolio of over 60 trusted brands across 14 diverse categories. Quality wholesale solutions for retailers and trade professionals nationwide.',
       image: 'https://images.pexels.com/photos/4481258/pexels-photo-4481258.jpeg?auto=compress&cs=tinysrgb&w=1920',
       cta: 'Explore Brands'
     },
     {
-      title: 'Quality Cleaning Solutions',
-      subtitle: 'Industry-leading cleaning products for every need',
+      title: 'Quality Cleaning Solutions and Household Essentials',
+      subtitle: 'Industry-leading products manufactured to the highest standards. With over 500+ products, we deliver exceptional value and quality that your customers trust.',
       image: 'https://images.pexels.com/photos/4239091/pexels-photo-4239091.jpeg?auto=compress&cs=tinysrgb&w=1920',
       cta: 'View Range'
     },
     {
-      title: '200,000 sq ft Distribution',
-      subtitle: 'Fast, reliable delivery across the UK',
+      title: 'State-of-the-Art 200,000 sq ft Distribution Center',
+      subtitle: 'Fast, reliable next-day delivery across the UK. With 40+ years of experience and cutting-edge logistics, we ensure prompt order fulfillment for thousands of trade partners.',
       image: 'https://images.pexels.com/photos/4483610/pexels-photo-4483610.jpeg?auto=compress&cs=tinysrgb&w=1920',
       cta: 'Learn More'
     }
@@ -84,21 +84,21 @@ const Home = () => {
   const categories = [
     {
       icon: Sparkles,
-      title: 'Cleaning Products',
+      title: 'Household Cleaning',
       description: 'Professional-grade cleaning solutions for every surface',
       image: 'https://images.pexels.com/photos/4239091/pexels-photo-4239091.jpeg?auto=compress&cs=tinysrgb&w=600'
     },
     {
-      icon: Wrench,
-      title: 'DIY & Tools',
-      description: 'Quality tools and materials for trade professionals',
-      image: 'https://images.pexels.com/photos/5691622/pexels-photo-5691622.jpeg?auto=compress&cs=tinysrgb&w=600'
+      icon: UtensilsCrossed,
+      title: 'Kitchen and Cooking',
+      description: 'Quality kitchen essentials and cooking products for your home',
+      image: 'https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=600'
     },
     {
-      icon: Heart,
-      title: 'Health & Pet Care',
-      description: 'Trusted products for family and pet wellness',
-      image: 'https://images.pexels.com/photos/4498220/pexels-photo-4498220.jpeg?auto=compress&cs=tinysrgb&w=600'
+      icon: BookOpen,
+      title: 'Books',
+      description: 'Wide selection of books for every reader',
+      image: 'https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=600'
     }
   ];
 
@@ -127,7 +127,7 @@ const Home = () => {
 
   return (
     <div className="min-h-screen">
-      <section className="relative h-[600px] overflow-hidden">
+      <section className="relative h-[500px] lg:h-[650px] xl:h-[750px] 2xl:h-[850px] overflow-hidden">
         {slides.map((slide, index) => (
           <div
             key={index}
@@ -306,21 +306,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-[#002D62] text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold mb-4">Ready to Partner With Us?</h2>
-          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Join hundreds of satisfied trade partners and retailers across the UK
-          </p>
-          <Link
-            to="/contact"
-            className="inline-block bg-white text-[#002D62] px-8 py-4 rounded-md font-semibold text-lg hover:bg-gray-100 transition"
-          >
-            Get in Touch
-          </Link>
-        </div>
-      </section>
-
+      
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -468,10 +454,26 @@ const Home = () => {
         </div>
       </section>
 
+      <section className="py-20 bg-[#002D62] text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl font-bold mb-4">Ready to Partner With Us?</h2>
+          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+            Join hundreds of satisfied trade partners and retailers across the UK
+          </p>
+          <Link
+            to="/contact"
+            className="inline-block bg-white text-[#002D62] px-8 py-4 rounded-md font-semibold text-lg hover:bg-gray-100 transition"
+          >
+            Get in Touch
+          </Link>
+        </div>
+      </section>
+
+
       <section className="py-20 bg-[#F3F4F6]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#002D62] mb-4">Some Brands</h2>
+            <h2 className="text-4xl font-bold text-[#002D62] mb-4">Featured Brands</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Discover some of our most popular and trusted brands
             </p>

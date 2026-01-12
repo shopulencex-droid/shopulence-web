@@ -91,8 +91,21 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-400">
-          <p>&copy; {new Date().getFullYear()} Shopulence. All rights reserved.</p>
+        <div className="border-t border-gray-700 mt-8 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 space-y-4 md:space-y-0">
+            <p>&copy; {new Date().getFullYear()} Shopulence. All rights reserved.</p>
+            <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+              <Link to="/terms-and-conditions" className="hover:text-white transition">
+                Terms and Conditions
+              </Link>
+              <Link to="/privacy-policy" className="hover:text-white transition">
+                Privacy Policy
+              </Link>
+              <Link to="/returns-and-refunds" className="hover:text-white transition">
+                Returns and Refunds
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

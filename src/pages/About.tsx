@@ -6,14 +6,6 @@ const About = () => {
   useEffect(() => {
     document.title = 'Shopulence | About';
   }, []);
-  const timeline = [
-    { year: '1985', title: 'Company Founded', description: 'Started as a small family-owned distribution business' },
-    { year: '1995', title: 'First Major Brand', description: 'Launched our flagship cleaning brand, establishing market presence' },
-    { year: '2005', title: 'Expansion', description: 'Opened 200,000 sq ft distribution center' },
-    { year: '2015', title: 'Portfolio Growth', description: 'Acquired and developed multiple sub-brands across diverse categories' },
-    { year: '2025', title: 'Industry Leader', description: 'Serving thousands of trade partners with 500+ products' }
-  ];
-
   const values = [
     {
       icon: Target,
@@ -41,7 +33,7 @@ const About = () => {
 
   return (
     <div className="min-h-screen">
-      <section className="relative h-96 bg-gradient-to-r from-[#002D62] to-[#003d82] text-white">
+      <section className="relative h-96 lg:h-[500px] xl:h-[600px] 2xl:h-[700px] bg-gradient-to-r from-[#002D62] to-[#003d82] text-white">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/4481259/pexels-photo-4481259.jpeg?auto=compress&cs=tinysrgb&w=1920')] bg-cover bg-center"></div>
         </div>
@@ -96,41 +88,6 @@ const About = () => {
                 </div>
                 <h3 className="text-2xl font-bold text-[#002D62] mb-3">{value.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{value.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-[#F3F4F6]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#002D62] mb-4">Our Journey</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              From humble beginnings to industry leadership
-            </p>
-          </div>
-
-          <div className="relative">
-            <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-[#002D62]"></div>
-
-            {timeline.map((item, index) => (
-              <div
-                key={index}
-                className={`relative mb-12 md:mb-16 ${
-                  index % 2 === 0 ? 'md:pr-[50%] md:text-right' : 'md:pl-[50%]'
-                }`}
-              >
-                <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-                  <div className="absolute hidden md:block top-8 w-6 h-6 bg-[#002D62] rounded-full border-4 border-[#F3F4F6]"
-                    style={{
-                      [index % 2 === 0 ? 'right' : 'left']: '-3.25rem'
-                    }}
-                  ></div>
-                  <div className="text-3xl font-bold text-[#002D62] mb-2">{item.year}</div>
-                  <h3 className="text-xl font-semibold text-gray-800 mb-2">{item.title}</h3>
-                  <p className="text-gray-600">{item.description}</p>
-                </div>
               </div>
             ))}
           </div>
