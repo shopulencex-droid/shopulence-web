@@ -86,7 +86,11 @@ const TermsAndConditions = () => {
 
             <h2 className="text-3xl font-bold text-[#002D62] mb-4 mt-8">11. Contact Information</h2>
             <p className="text-gray-600 mb-6 leading-relaxed">
-              If you have any questions about these Terms and Conditions, please contact us at info@shopulence.com.
+              If you have any questions about these Terms and Conditions, please contact us at:
+            </p>
+            <p className="text-gray-600 mb-6 leading-relaxed">
+              Email: admin@shopulence.co.uk<br />
+              Address: Unit 1-3 Wyvern Estate Beverly Way, Beverly Way, New Malden KT3 4PH
             </p>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Mail, Send, Building2, Users, Headphones } from 'lucide-react';
+import { Mail, Send, Building2, Users, Headphones, MapPin } from 'lucide-react';
 
 const Contact = () => {
   useEffect(() => {
@@ -79,17 +79,17 @@ const Contact = () => {
     {
       icon: Users,
       name: 'Sales',
-      email: 'info@shopulence.com'
+      email: 'admin@shopulence.co.uk'
     },
     {
       icon: Headphones,
       name: 'Support',
-      email: 'info@shopulence.com'
+      email: 'admin@shopulence.co.uk'
     },
     {
       icon: Building2,
       name: 'Media',
-      email: 'info@shopulence.com'
+      email: 'admin@shopulence.co.uk'
     }
   ];
 
@@ -130,15 +130,28 @@ const Contact = () => {
           <div className="flex flex-col gap-12 items-center">
             <div className="w-full max-w-2xl text-center">
               <h2 className="text-3xl font-bold text-[#002D62] mb-6">Get in Touch</h2>
-              <div className="bg-[#F3F4F6] p-6 rounded-lg">
-                <div className="flex flex-col items-center justify-center">
-                  <div className="flex items-center mb-2">
-                    <Mail size={24} className="text-[#002D62] mr-3 flex-shrink-0" />
-                    <h3 className="font-semibold text-lg">Email</h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="bg-[#F3F4F6] p-6 rounded-lg">
+                  <div className="flex flex-col items-center justify-center">
+                    <div className="flex items-center mb-2">
+                      <Mail size={24} className="text-[#002D62] mr-3 flex-shrink-0" />
+                      <h3 className="font-semibold text-lg">Email</h3>
+                    </div>
+                    <a href="mailto:admin@shopulence.co.uk" className="text-gray-600 hover:text-[#002D62] transition">
+                      admin@shopulence.co.uk
+                    </a>
                   </div>
-                  <a href="mailto:info@shopulence.com" className="text-gray-600 hover:text-[#002D62] transition">
-                    info@shopulence.com
-                  </a>
+                </div>
+                <div className="bg-[#F3F4F6] p-6 rounded-lg">
+                  <div className="flex flex-col items-center justify-center">
+                    <div className="flex items-center mb-2">
+                      <MapPin size={24} className="text-[#002D62] mr-3 flex-shrink-0" />
+                      <h3 className="font-semibold text-lg">Address</h3>
+                    </div>
+                    <p className="text-gray-600 text-sm">
+                      Unit 1-3 Wyvern Estate Beverly Way, Beverly Way, New Malden KT3 4PH
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>

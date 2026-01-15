@@ -25,9 +25,7 @@ const About = () => {
   ];
 
   const stats = [
-    { number: '40+', label: 'Years in Business' },
     { number: '500+', label: 'Products' },
-    { number: '200K', label: 'Sq Ft Warehouse' },
     { number: '1000+', label: 'Trade Partners' }
   ];
 
@@ -41,7 +39,7 @@ const About = () => {
           <div>
             <h1 className="text-5xl md:text-6xl font-bold mb-4">About Us</h1>
             <p className="text-xl text-gray-200 max-w-2xl">
-              Four decades of excellence in wholesale distribution and manufacturing
+              Excellence in wholesale distribution and manufacturing
             </p>
           </div>
         </div>
@@ -49,7 +47,7 @@ const About = () => {
 
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+          <div className="grid grid-cols-2 md:grid-cols-2 gap-8 mb-16">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="text-4xl md:text-5xl font-bold text-[#002D62] mb-2">{stat.number}</div>
@@ -62,13 +60,13 @@ const About = () => {
             <div>
               <h2 className="text-4xl font-bold text-[#002D62] mb-6">Who We Are</h2>
               <p className="text-lg text-gray-600 mb-4">
-                Shopulence is a leading UK-based wholesaler and manufacturer with over 40 years of industry experience. We operate from a state-of-the-art 200,000 square foot distribution center, serving trade partners across the United Kingdom.
+                Shopulence is a premier UK-based wholesale distributor and manufacturer, dedicated to empowering trade partners and retailers across the United Kingdom with quality products and exceptional service.
               </p>
               <p className="text-lg text-gray-600 mb-4">
-                Our diverse portfolio includes multiple trusted brands spanning cleaning products, DIY supplies, pet care, health and beauty, and household essentials. We pride ourselves on delivering exceptional value, quality, and service to retailers and trade professionals.
+                We specialize in sourcing and distributing an extensive range of trusted brands across multiple categories including household cleaning, personal care, kitchen essentials, pet care, DIY supplies, and health & beauty products. Our carefully curated portfolio ensures that our partners have access to products that meet the highest standards of quality and reliability.
               </p>
               <p className="text-lg text-gray-600">
-                With a commitment to innovation and customer satisfaction, we continue to expand our range and improve our services, maintaining our position as a trusted partner in the wholesale industry.
+                At Shopulence, we understand that success in wholesale distribution comes from building strong, lasting relationships. Our dedicated team works closely with each partner to understand their unique needs, providing personalized support, competitive pricing, and reliable logistics solutions that help their businesses thrive.
               </p>
             </div>
             <div className="relative h-96 rounded-lg overflow-hidden shadow-2xl">
@@ -101,7 +99,7 @@ const About = () => {
               <Building2 size={64} className="mb-6" />
               <h2 className="text-4xl font-bold mb-4">State-of-the-Art Facilities</h2>
               <p className="text-lg text-gray-200 mb-4">
-                Our 200,000 square foot distribution center features advanced inventory management systems, climate-controlled storage, and efficient logistics operations.
+                Our distribution center features advanced inventory management systems, climate-controlled storage, and efficient logistics operations.
               </p>
               <p className="text-lg text-gray-200">
                 This infrastructure enables us to maintain optimal stock levels, ensure product quality, and deliver orders promptly to partners across the UK.

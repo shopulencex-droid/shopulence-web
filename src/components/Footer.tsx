@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Mail } from 'lucide-react';
+import { Mail, MapPin } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -81,10 +81,16 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-lg mb-4">Contact Info</h3>
             <ul className="space-y-3 text-sm">
+              <li className="flex items-start">
+                <MapPin size={16} className="mr-2 flex-shrink-0 mt-0.5" />
+                <span className="text-gray-300">
+                  Unit 1-3 Wyvern Estate Beverly Way, Beverly Way, New Malden KT3 4PH
+                </span>
+              </li>
               <li className="flex items-center">
                 <Mail size={16} className="mr-2 flex-shrink-0" />
-                <a href="mailto:info@shopulence.com" className="text-gray-300 hover:text-white transition">
-                  info@shopulence.com
+                <a href="mailto:admin@shopulence.co.uk" className="text-gray-300 hover:text-white transition">
+                  admin@shopulence.co.uk
                 </a>
               </li>
             </ul>
@@ -93,7 +99,10 @@ const Footer = () => {
 
         <div className="border-t border-gray-700 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 space-y-4 md:space-y-0">
-            <p>&copy; {new Date().getFullYear()} Shopulence. All rights reserved.</p>
+            <div className="flex flex-col items-center md:items-start">
+              <p>&copy; {new Date().getFullYear()} Shopulence Limited 13530405. All rights reserved.</p>
+              
+            </div>
             <div className="flex flex-wrap justify-center gap-4 md:gap-6">
               <Link to="/terms-and-conditions" className="hover:text-white transition">
                 Terms and Conditions

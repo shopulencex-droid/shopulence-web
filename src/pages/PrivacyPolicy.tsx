@@ -103,7 +103,7 @@ const PrivacyPolicy = () => {
               <li>Right to withdraw consent</li>
             </ul>
             <p className="text-gray-600 mb-6 leading-relaxed">
-              To exercise these rights, please contact us at info@shopulence.com.
+              To exercise these rights, please contact us at admin@shopulence.co.uk.
             </p>
 
             <h2 className="text-3xl font-bold text-[#002D62] mb-4 mt-8">8. Data Retention</h2>
@@ -131,7 +131,8 @@ const PrivacyPolicy = () => {
               If you have questions about this Privacy Policy or wish to exercise your rights, please contact us at:
             </p>
             <p className="text-gray-600 mb-6 leading-relaxed">
-              Email: info@shopulence.com<br />
+              Email: admin@shopulence.co.uk<br />
+              Address: Unit 1-3 Wyvern Estate Beverly Way, Beverly Way, New Malden KT3 4PH<br />
               Shopulence<br />
               Your Global Supply
             </p>

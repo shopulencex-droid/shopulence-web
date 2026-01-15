@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, Mail, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import { Menu, X, Mail, Facebook, Instagram, Linkedin } from 'lucide-react';
 import logo from '../../assets/shopulence.png';
 
 const Header = () => {
@@ -12,16 +12,18 @@ const Header = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center text-sm">
             <div className="flex items-center space-x-4">
-              <a href="mailto:info@shopulence.com" className="flex items-center hover:text-gray-300 transition">
+              <a href="mailto:admin@shopulence.co.uk" className="flex items-center hover:text-gray-300 transition">
                 <Mail size={14} className="mr-1" />
-                info@shopulence.com
+                admin@shopulence.co.uk
               </a>
               <div className="flex items-center space-x-3 ml-4 pl-4 border-l border-white/20">
                 <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300 transition">
                   <Facebook size={16} />
                 </a>
                 <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300 transition">
-                  <Twitter size={16} />
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                  </svg>
                 </a>
                 <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300 transition">
                   <Instagram size={16} />

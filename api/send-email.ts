@@ -48,7 +48,7 @@ export default async function handler(
     // Email content
     const mailOptions = {
       from: process.env.SMTP_FROM || process.env.SMTP_USER,
-      to: process.env.RECIPIENT_EMAIL || 'umarzeeshan709@gmail.com',
+      to: process.env.RECIPIENT_EMAIL || 'admin@shopulence.co.uk',
       replyTo: email,
       subject: `New Contact Form Submission - ${department}`,
       html: `

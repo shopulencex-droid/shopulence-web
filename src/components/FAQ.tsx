@@ -11,7 +11,7 @@ const FAQ = () => {
     },
     {
       question: 'How can I become a trade partner?',
-      answer: 'To become a trade partner, simply contact us through our contact form or email us at info@shopulence.com. Our team will get in touch with you to discuss partnership opportunities, pricing, and requirements. We welcome retailers and trade professionals across the UK.'
+      answer: 'To become a trade partner, simply contact us through our contact form or email us at admin@shopulence.co.uk. Our team will get in touch with you to discuss partnership opportunities, pricing, and requirements. We welcome retailers and trade professionals across the UK.'
     },
     {
       question: 'What are your delivery options?',
@@ -19,7 +19,7 @@ const FAQ = () => {
     },
     {
       question: 'Do you offer minimum order quantities?',
-      answer: 'Yes, we do have minimum order quantities that vary depending on the product category and brand. Please contact our sales team at info@shopulence.com to discuss specific requirements and minimum order quantities for your business needs.'
+      answer: 'Yes, we do have minimum order quantities that vary depending on the product category and brand. Please contact our sales team at admin@shopulence.co.uk to discuss specific requirements and minimum order quantities for your business needs.'
     },
     {
       question: 'What support do you provide to trade partners?',
