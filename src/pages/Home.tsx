@@ -26,8 +26,8 @@ const Home = () => {
       cta: 'View Range'
     },
     {
-      title: 'State-of-the-Art 200,000 sq ft Distribution Center',
-      subtitle: 'Fast, reliable next-day delivery across the UK. With 40+ years of experience and cutting-edge logistics, we ensure prompt order fulfillment for thousands of trade partners.',
+      title: 'Efficient Distribution & Logistics Solutions',
+      subtitle: 'Fast, reliable next-day delivery across the UK. Our state-of-the-art distribution center and cutting-edge logistics ensure prompt order fulfillment for thousands of trade partners.',
       image: 'https://images.pexels.com/photos/4483610/pexels-photo-4483610.jpeg?auto=compress&cs=tinysrgb&w=1920',
       cta: 'Learn More'
     }
