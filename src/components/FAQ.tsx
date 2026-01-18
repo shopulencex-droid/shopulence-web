@@ -15,7 +15,7 @@ const FAQ = () => {
     },
     {
       question: 'What are your delivery options?',
-      answer: 'We offer fast and reliable delivery services across the UK. Next-day delivery is available for UK mainland orders. Our 200,000 square foot distribution center ensures efficient order processing and timely delivery to all our trade partners.'
+      answer: 'We offer fast and reliable delivery services across the UK. Next-day delivery is available for UK mainland orders. Our state-of-the-art distribution network and advanced logistics systems ensure efficient order processing and timely delivery to all our trade partners.'
     },
     {
       question: 'Do you offer minimum order quantities?',

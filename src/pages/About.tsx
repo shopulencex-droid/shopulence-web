@@ -72,7 +72,7 @@ const About = () => {
             <div className="relative h-96 rounded-lg overflow-hidden shadow-2xl">
               <img
                 src="https://images.pexels.com/photos/4483610/pexels-photo-4483610.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Distribution Center"
+                alt="Warehouse Operations"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -99,7 +99,7 @@ const About = () => {
               <Building2 size={64} className="mb-6" />
               <h2 className="text-4xl font-bold mb-4">State-of-the-Art Facilities</h2>
               <p className="text-lg text-gray-200 mb-4">
-                Our distribution center features advanced inventory management systems, climate-controlled storage, and efficient logistics operations.
+                Our facilities feature advanced inventory management systems, climate-controlled storage, and efficient logistics operations.
               </p>
               <p className="text-lg text-gray-200">
                 This infrastructure enables us to maintain optimal stock levels, ensure product quality, and deliver orders promptly to partners across the UK.
