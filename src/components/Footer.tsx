@@ -100,7 +100,7 @@ const Footer = () => {
         <div className="border-t border-gray-700 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 space-y-4 md:space-y-0">
             <div className="flex flex-col items-center md:items-start">
-              <p>&copy; {new Date().getFullYear()} Shopulence Limited 13530405. All rights reserved.</p>
+              <p>&copy; 2025 Shopulence Limited 13530405. All rights reserved.</p>
               
             </div>
             <div className="flex flex-wrap justify-center gap-4 md:gap-6">

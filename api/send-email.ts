@@ -20,14 +20,65 @@ export default async function handler(
   }
 
   try {
-    const { name, email, company, department, message } = request.body;
+    const body = request.body as Record<string, string>;
+    const { type } = body;
+    const isProductInquiry = type === 'product';
 
-    // Validate required fields
+    if (isProductInquiry) {
+      const { name, email, phone, note, productTitle, brandName, ean } = body;
+      if (!name || !email) {
+        return response.status(400).json({ error: 'Missing required fields (name, email)' });
+      }
+      if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
+        return response.status(500).json({
+          error: 'Email configuration missing. Please set up environment variables in Vercel.',
+          details: 'SMTP_USER and SMTP_PASS are required'
+        });
+      }
+      const transporter = nodemailer.createTransport({
+        host: process.env.SMTP_HOST || 'smtp.gmail.com',
+        port: parseInt(process.env.SMTP_PORT || '587'),
+        secure: process.env.SMTP_SECURE === 'true',
+        auth: { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS },
+      });
+      const mailOptions = {
+        from: process.env.SMTP_FROM || process.env.SMTP_USER,
+        to: process.env.RECIPIENT_EMAIL || 'admin@shopulence.co.uk',
+        replyTo: email,
+        subject: `Product inquiry: ${productTitle || 'Product'} (${brandName || 'Brand'})`,
+        html: `
+      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+        <h2 style="color: #002D62; border-bottom: 2px solid #002D62; padding-bottom: 10px;">
+          Product Inquiry
+        </h2>
+        <div style="background-color: #f3f4f6; padding: 20px; border-radius: 8px; margin: 20px 0;">
+          <p><strong>Product:</strong> ${productTitle || '—'}</p>
+          <p><strong>Brand:</strong> ${brandName || '—'}</p>
+          <p><strong>EAN:</strong> ${ean || '—'}</p>
+        </div>
+        <div style="background-color: #f3f4f6; padding: 20px; border-radius: 8px; margin: 20px 0;">
+          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          ${phone ? `<p><strong>Phone:</strong> ${phone}</p>` : ''}
+          ${note ? `<p><strong>Note:</strong><br/>${note.replace(/\n/g, '<br>')}</p>` : ''}
+        </div>
+        <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb; color: #6b7280; font-size: 12px;">
+          <p>This inquiry was sent from the Shopulence brand product page.</p>
+        </div>
+      </div>
+    `,
+        text: `Product Inquiry\n\nProduct: ${productTitle || '—'}\nBrand: ${brandName || '—'}\nEAN: ${ean || '—'}\n\nName: ${name}\nEmail: ${email}\n${phone ? `Phone: ${phone}\n` : ''}${note ? `Note: ${note}` : ''}`,
+      };
+      await transporter.sendMail(mailOptions);
+      return response.status(200).json({ success: true, message: 'Email sent successfully' });
+    }
+
+    const { name, email, company, department, message } = body;
+
     if (!name || !email || !message) {
       return response.status(400).json({ error: 'Missing required fields' });
     }
 
-    // Email configuration - using environment variables
     if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
       return response.status(500).json({ 
         error: 'Email configuration missing. Please set up environment variables in Vercel.',
@@ -38,14 +89,13 @@ export default async function handler(
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST || 'smtp.gmail.com',
       port: parseInt(process.env.SMTP_PORT || '587'),
-      secure: process.env.SMTP_SECURE === 'true', // true for 465, false for other ports
+      secure: process.env.SMTP_SECURE === 'true',
       auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
       },
     });
 
-    // Email content
     const mailOptions = {
       from: process.env.SMTP_FROM || process.env.SMTP_USER,
       to: process.env.RECIPIENT_EMAIL || 'admin@shopulence.co.uk',

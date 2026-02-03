@@ -6,6 +6,7 @@ import AnimatedPage from './components/AnimatedPage';
 import Home from './pages/Home';
 import About from './pages/About';
 import Brands from './pages/Brands';
+import BrandProducts from './pages/BrandProducts';
 import Contact from './pages/Contact';
 import TermsAndConditions from './pages/TermsAndConditions';
 import PrivacyPolicy from './pages/PrivacyPolicy';
@@ -45,6 +46,14 @@ function AppContent() {
             element={
               <AnimatedPage>
                 <Brands />
+              </AnimatedPage>
+            } 
+          />
+          <Route 
+            path="/brands/:brandSlug" 
+            element={
+              <AnimatedPage>
+                <BrandProducts />
               </AnimatedPage>
             } 
           />

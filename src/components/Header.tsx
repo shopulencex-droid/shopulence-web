@@ -1,10 +1,21 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Mail, Facebook, Instagram, Linkedin } from 'lucide-react';
 import logo from '../../assets/shopulence.png';
 
+const navLinkClass = (isActive: boolean) =>
+  isActive
+    ? 'text-[#002D62] font-semibold'
+    : 'text-gray-700 hover:text-[#002D62] font-medium';
+
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { pathname } = useLocation();
+
+  const isHome = pathname === '/';
+  const isBrands = pathname.startsWith('/brands');
+  const isAbout = pathname === '/about';
+  const isContact = pathname === '/contact';
 
   return (
     <header className="bg-white shadow-md sticky top-0 z-50">
@@ -52,25 +63,25 @@ const Header = () => {
           </Link>
 
           <div className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="text-gray-700 hover:text-[#002D62] font-medium transition">
+            <Link to="/" className={`transition ${navLinkClass(isHome)}`}>
               Home
             </Link>
-
-            <Link to="/brands" className="text-gray-700 hover:text-[#002D62] font-medium transition">
+            <Link to="/brands" className={`transition ${navLinkClass(isBrands)}`}>
               Brands
             </Link>
-
-            <Link to="/about" className="text-gray-700 hover:text-[#002D62] font-medium transition">
+            <Link to="/about" className={`transition ${navLinkClass(isAbout)}`}>
               About
             </Link>
-
-            <Link to="/contact" className="text-gray-700 hover:text-[#002D62] font-medium transition">
+            <Link to="/contact" className={`transition ${navLinkClass(isContact)}`}>
               Contact
             </Link>
-
             <Link
               to="/contact"
-              className="bg-[#002D62] text-white px-6 py-3 rounded-md font-semibold hover:bg-[#003d82] transition"
+              className={`px-6 py-3 rounded-md font-semibold transition ${
+                isContact
+                  ? 'bg-[#003d82] text-white'
+                  : 'bg-[#002D62] text-white hover:bg-[#003d82]'
+              }`}
             >
               Trade Inquiries
             </Link>
@@ -89,35 +100,37 @@ const Header = () => {
             <div className="flex flex-col space-y-4">
               <Link
                 to="/"
-                className="text-gray-700 hover:text-[#002D62] font-medium"
+                className={navLinkClass(isHome)}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Home
               </Link>
               <Link
                 to="/brands"
-                className="text-gray-700 hover:text-[#002D62] font-medium"
+                className={navLinkClass(isBrands)}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Brands
               </Link>
               <Link
                 to="/about"
-                className="text-gray-700 hover:text-[#002D62] font-medium"
+                className={navLinkClass(isAbout)}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 About
               </Link>
               <Link
                 to="/contact"
-                className="text-gray-700 hover:text-[#002D62] font-medium"
+                className={navLinkClass(isContact)}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Contact
               </Link>
               <Link
                 to="/contact"
-                className="bg-[#002D62] text-white px-6 py-3 rounded-md font-semibold text-center"
+                className={`px-6 py-3 rounded-md font-semibold text-center ${
+                  isContact ? 'bg-[#003d82] text-white' : 'bg-[#002D62] text-white'
+                }`}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Trade Inquiries
