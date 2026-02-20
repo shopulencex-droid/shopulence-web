@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Mail, Facebook, Instagram, Linkedin } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Link, useLocation, useNavigate, useSearchParams } from 'react-router-dom';
+import { Menu, X, Mail, Facebook, Instagram, Linkedin, Search } from 'lucide-react';
 import logo from '../../assets/shopulence.png';
 
 const navLinkClass = (isActive: boolean) =>
@@ -10,7 +10,20 @@ const navLinkClass = (isActive: boolean) =>
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
   const { pathname } = useLocation();
+  const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+
+  useEffect(() => {
+    if (pathname === '/search') setSearchQuery(searchParams.get('q') || '');
+  }, [pathname, searchParams]);
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    const q = searchQuery.trim();
+    if (q) navigate(`/search?q=${encodeURIComponent(q)}`);
+  };
 
   const isHome = pathname === '/';
   const isBrands = pathname.startsWith('/brands');
@@ -62,7 +75,20 @@ const Header = () => {
             />
           </Link>
 
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
+            <form onSubmit={handleSearch} className="flex items-center border border-gray-300 rounded-md overflow-hidden bg-gray-50 focus-within:ring-2 focus-within:ring-[#002D62] focus-within:border-transparent">
+              <input
+                type="search"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search products..."
+                className="w-40 lg:w-52 px-3 py-2 text-sm bg-transparent border-0 focus:ring-0 outline-none placeholder-gray-500"
+                aria-label="Search products"
+              />
+              <button type="submit" className="p-2 text-gray-600 hover:text-[#002D62] hover:bg-gray-100 transition" aria-label="Submit search">
+                <Search size={18} />
+              </button>
+            </form>
             <Link to="/" className={`transition ${navLinkClass(isHome)}`}>
               Home
             </Link>
@@ -97,6 +123,19 @@ const Header = () => {
 
         {mobileMenuOpen && (
           <div className="md:hidden py-4 border-t border-gray-200 animate-slide-in-left">
+            <form onSubmit={handleSearch} className="flex items-center border border-gray-300 rounded-md overflow-hidden bg-gray-50 mb-4">
+              <input
+                type="search"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search products..."
+                className="flex-1 px-3 py-2 text-sm bg-transparent border-0 focus:ring-0 outline-none"
+                aria-label="Search products"
+              />
+              <button type="submit" className="p-2 text-gray-600" aria-label="Submit search">
+                <Search size={18} />
+              </button>
+            </form>
             <div className="flex flex-col space-y-4">
               <Link
                 to="/"

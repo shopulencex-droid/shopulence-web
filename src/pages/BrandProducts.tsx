@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Send, X } from 'lucide-react';
 import { getBrandBySlug } from '../data/brands';
+import { productsByBrandSlug } from '../data/exProducts';
 
 export interface Product {
   title: string;
@@ -9,33 +10,13 @@ export interface Product {
   image: string;
 }
 
-// Mock products per brand – replace with API/data later
-function getMockProducts(brandName: string, brandLogo: string): Product[] {
-  return [
-    {
-      title: `${brandName} – Product 1`,
-      ean: '5060123456789',
-      image: 'https://images.pexels.com/photos/3985323/pexels-photo-3985323.jpeg?auto=compress&cs=tinysrgb&w=800'
-    },
-    {
-      title: `${brandName} – Product 2`,
-      ean: '5060123456790',
-      image: 'https://images.pexels.com/photos/3373739/pexels-photo-3373739.jpeg?auto=compress&cs=tinysrgb&w=800'
-    },
-    {
-      title: `${brandName} – Product 3`,
-      ean: '5060123456791',
-      image: brandLogo
-    }
-  ];
-}
-
 type FormState = { name: string; email: string; phone: string; note: string };
 
 const BrandProducts = () => {
   const { brandSlug } = useParams<{ brandSlug: string }>();
   const brand = brandSlug ? getBrandBySlug(brandSlug) : undefined;
-  const products = brand ? getMockProducts(brand.name, brand.logo) : [];
+  const exData = brandSlug ? productsByBrandSlug[brandSlug] : undefined;
+  const products: Product[] = exData ? exData.products.map(p => ({ title: p.title, ean: p.ean || '', image: p.image })) : [];
 
   const [selectedProductIndex, setSelectedProductIndex] = useState<number | null>(null);
   const [form, setForm] = useState<FormState>({ name: '', email: '', phone: '', note: '' });

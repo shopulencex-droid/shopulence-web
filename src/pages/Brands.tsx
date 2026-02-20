@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { categories, brands } from '../data/brands';
+import { exBrandSlugs } from '../data/exProducts';
 
 const LARGE_LOGO_BRANDS = [
   'Seal-A-Pack', 'Home Maid', 'PestShield', 'Always', 'Oral b', 'BEAUTY OF JOSEON',
@@ -14,10 +15,11 @@ const Brands = () => {
     document.title = 'Shopulence | Brands';
   }, []);
 
-  // Group brands by category
+  // Only show brands that have products in the ex folder; group by category
+  const brandsInEx = brands.filter(brand => exBrandSlugs.includes(brand.slug));
   const brandsByCategory = categories.map(category => ({
     category,
-    brands: brands.filter(brand => brand.category === category)
+    brands: brandsInEx.filter(brand => brand.category === category)
   })).filter(group => group.brands.length > 0);
 
   return (
