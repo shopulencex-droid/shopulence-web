@@ -11,7 +11,8 @@ const SearchResults = () => {
     return allProductsForSearch.filter(
       (p) =>
         p.title.toLowerCase().includes(q) ||
-        p.brandName.toLowerCase().includes(q)
+        p.brandName.toLowerCase().includes(q) ||
+        (p.ean && p.ean.includes(q))
     );
   }, [q]);
 
@@ -63,6 +64,11 @@ const SearchResults = () => {
                         className="max-w-full object-contain max-h-28"
                       />
                     </div>
+                    {product.ean && (
+                      <div className="text-xs text-gray-400 mt-2 w-full text-center">
+                        EAN: {product.ean}
+                      </div>
+                    )}
                   </Link>
                 ))}
               </div>

@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate, useSearchParams } from 'react-router-dom';
-import { Menu, X, Mail, Facebook, Instagram, Linkedin, Search } from 'lucide-react';
+import { Menu, X, Mail, Facebook, Instagram, Linkedin, Search, XCircle } from 'lucide-react';
 import logo from '../../assets/shopulence.png';
 
 const navLinkClass = (isActive: boolean) =>
@@ -8,21 +8,47 @@ const navLinkClass = (isActive: boolean) =>
     ? 'text-[#002D62] font-semibold'
     : 'text-gray-700 hover:text-[#002D62] font-medium';
 
+const SEARCH_DEBOUNCE_MS = 250;
+
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const { pathname } = useLocation();
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
+  const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     if (pathname === '/search') setSearchQuery(searchParams.get('q') || '');
   }, [pathname, searchParams]);
 
+  // Live search: navigate to search results as user types (debounced)
+  useEffect(() => {
+    if (debounceRef.current) clearTimeout(debounceRef.current);
+    const q = searchQuery.trim();
+    debounceRef.current = setTimeout(() => {
+      if (q) {
+        const currentQ = pathname === '/search' ? searchParams.get('q') || '' : '';
+        if (currentQ !== q) navigate(`/search?q=${encodeURIComponent(q)}`);
+      } else if (pathname === '/search') {
+        navigate('/brands');
+      }
+      debounceRef.current = null;
+    }, SEARCH_DEBOUNCE_MS);
+    return () => {
+      if (debounceRef.current) clearTimeout(debounceRef.current);
+    };
+  }, [searchQuery, pathname, searchParams, navigate]);
+
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     const q = searchQuery.trim();
     if (q) navigate(`/search?q=${encodeURIComponent(q)}`);
+  };
+
+  const handleClearSearch = () => {
+    setSearchQuery('');
+    if (pathname === '/search') navigate('/brands');
   };
 
   const isHome = pathname === '/';
@@ -85,6 +111,11 @@ const Header = () => {
                 className="w-40 lg:w-52 px-3 py-2 text-sm bg-transparent border-0 focus:ring-0 outline-none placeholder-gray-500"
                 aria-label="Search products"
               />
+              {searchQuery && (
+                <button type="button" onClick={handleClearSearch} className="p-1.5 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded transition" aria-label="Clear search and go to brands">
+                  <XCircle size={18} />
+                </button>
+              )}
               <button type="submit" className="p-2 text-gray-600 hover:text-[#002D62] hover:bg-gray-100 transition" aria-label="Submit search">
                 <Search size={18} />
               </button>
@@ -132,6 +163,11 @@ const Header = () => {
                 className="flex-1 px-3 py-2 text-sm bg-transparent border-0 focus:ring-0 outline-none"
                 aria-label="Search products"
               />
+              {searchQuery && (
+                <button type="button" onClick={handleClearSearch} className="p-1.5 text-gray-400 hover:text-gray-600" aria-label="Clear search and go to brands">
+                  <XCircle size={18} />
+                </button>
+              )}
               <button type="submit" className="p-2 text-gray-600" aria-label="Submit search">
                 <Search size={18} />
               </button>

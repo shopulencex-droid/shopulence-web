@@ -42,6 +42,20 @@ function getBrandSlug(name) {
     .replace(/[^a-z0-9-]/g, '');
 }
 
+// URL-safe filename (no spaces, no &, no special chars) so paths work on all servers
+function slugifyFilename(name) {
+  return name
+    .toLowerCase()
+    .replace(/\s*&\s*/g, '-')
+    .replace(/\s+/g, '-')
+    .replace(/['']/g, '')
+    .replace(/é/g, 'e')
+    .replace(/®/g, '')
+    .replace(/[^a-z0-9-]/g, '')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '') || 'image';
+}
+
 // EAN-13: last digit is check. Weights 1,3,1,3... from first 12 digits.
 function randomEAN13() {
   const digits = Array.from({ length: 12 }, () => Math.floor(Math.random() * 10));
@@ -64,11 +78,16 @@ if (!fs.existsSync(exRoot)) {
   process.exit(1);
 }
 
+// Build product list from ex, then copy to public/ex with URL-safe names (no encoding issues)
 const productsByBrandSlug = {};
 const exBrandSlugs = [];
 const allProducts = [];
 
 const dirs = fs.readdirSync(exRoot, { withFileTypes: true }).filter(d => d.isDirectory());
+
+if (!fs.existsSync(publicDir)) fs.mkdirSync(publicDir, { recursive: true });
+if (fs.existsSync(publicExDir)) fs.rmSync(publicExDir, { recursive: true });
+fs.mkdirSync(publicExDir, { recursive: true });
 
 for (const dir of dirs) {
   const folderName = dir.name;
@@ -82,10 +101,27 @@ for (const dir of dirs) {
   const brandPath = path.join(exRoot, folderName);
   const files = fs.readdirSync(brandPath).filter(f => /\.(png|jpg|jpeg|webp)$/i.test(f));
 
-  const products = files.map(file => {
+  const publicBrandDir = path.join(publicExDir, slug);
+  fs.mkdirSync(publicBrandDir, { recursive: true });
+
+  const usedNames = new Set();
+
+  const products = files.map((file) => {
     const title = file.replace(/\.(png|jpg|jpeg|webp)$/i, '');
-    // Store path with encoded segments so it works as img src; files on disk keep original names
-    const imagePath = `/ex/${encodeURIComponent(folderName)}/${encodeURIComponent(file)}`;
+    const ext = path.extname(file).toLowerCase();
+    let safeName = slugifyFilename(title) + ext;
+    let counter = 0;
+    while (usedNames.has(safeName)) {
+      counter++;
+      safeName = slugifyFilename(title) + '-' + counter + ext;
+    }
+    usedNames.add(safeName);
+
+    const srcFile = path.join(brandPath, file);
+    const destFile = path.join(publicBrandDir, safeName);
+    fs.copyFileSync(srcFile, destFile);
+
+    const imagePath = `/ex/${slug}/${safeName}`;
     const ean = getEanForProduct(brandName, title);
     return { title, image: imagePath, ean };
   });
@@ -93,27 +129,9 @@ for (const dir of dirs) {
   if (products.length > 0) {
     productsByBrandSlug[slug] = { brandName, products };
     exBrandSlugs.push(slug);
-    products.forEach(p => allProducts.push({ brandSlug: slug, brandName, title: p.title, image: p.image, ean: p.ean }));
-  }
-}
-
-// Copy ex folder to public/ex so images are served
-if (!fs.existsSync(publicDir)) fs.mkdirSync(publicDir, { recursive: true });
-if (fs.existsSync(publicExDir)) {
-  fs.rmSync(publicExDir, { recursive: true });
-}
-copyDirSync(exRoot, publicExDir);
-
-function copyDirSync(src, dest) {
-  fs.mkdirSync(dest, { recursive: true });
-  for (const entry of fs.readdirSync(src, { withFileTypes: true })) {
-    const srcPath = path.join(src, entry.name);
-    const destPath = path.join(dest, entry.name);
-    if (entry.isDirectory()) {
-      copyDirSync(srcPath, destPath);
-    } else {
-      fs.copyFileSync(srcPath, destPath);
-    }
+    products.forEach((p) =>
+      allProducts.push({ brandSlug: slug, brandName, title: p.title, image: p.image, ean: p.ean })
+    );
   }
 }
 

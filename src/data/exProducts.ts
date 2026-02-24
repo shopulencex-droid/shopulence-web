@@ -15,13 +15,13 @@ export const productsByBrandSlug: Record<string, { brandName: string; products: 
     "products": [
       {
         "title": "Always Infinity Feminine Pads for Women - 78 Count",
-        "image": "/ex/Always/Always%20Infinity%20Feminine%20Pads%20for%20Women%20-%2078%20Count.png",
-        "ean": "6291047942925"
+        "image": "/ex/always/always-infinity-feminine-pads-for-women-78-count.png",
+        "ean": "2499700827129"
       },
       {
         "title": "Always Radiant Feminine Pads for Women - 54 Count",
-        "image": "/ex/Always/Always%20Radiant%20Feminine%20Pads%20for%20Women%20-%2054%20Count.png",
-        "ean": "3354861978389"
+        "image": "/ex/always/always-radiant-feminine-pads-for-women-54-count.png",
+        "ean": "8296090636744"
       }
     ]
   },
@@ -30,12 +30,12 @@ export const productsByBrandSlug: Record<string, { brandName: string; products: 
     "products": [
       {
         "title": "Beauty of Joseon Relief Sun - 50ml - Pack of 2",
-        "image": "/ex/Beauty%20of%20Joseon/Beauty%20of%20Joseon%20Relief%20Sun%20-%2050ml%20-%20Pack%20of%202.png",
+        "image": "/ex/beauty-of-joseon/beauty-of-joseon-relief-sun-50ml-pack-of-2.png",
         "ean": "08809782558905"
       },
       {
         "title": "Beauty of Joseon Relief Sun - 50ml",
-        "image": "/ex/Beauty%20of%20Joseon/Beauty%20of%20Joseon%20Relief%20Sun%20-%2050ml.png",
+        "image": "/ex/beauty-of-joseon/beauty-of-joseon-relief-sun-50ml.png",
         "ean": "8809782555508"
       }
     ]
@@ -45,18 +45,18 @@ export const productsByBrandSlug: Record<string, { brandName: string; products: 
     "products": [
       {
         "title": "Duzzit - Shake & Fresh - Carpet Odour Neutraliser - Lily - 500g",
-        "image": "/ex/Duzzit/Duzzit%20-%20Shake%20%26%20Fresh%20-%20Carpet%20Odour%20Neutraliser%20-%20Lily%20-%20500g.png",
-        "ean": "8285329184842"
+        "image": "/ex/duzzit/duzzit-shake-fresh-carpet-odour-neutraliser-lily-500g.png",
+        "ean": "6565205719286"
       },
       {
         "title": "Duzzit Baking Soda Cleaner - 500g",
-        "image": "/ex/Duzzit/Duzzit%20Baking%20Soda%20Cleaner%20-%20500g.png",
-        "ean": "0863547413500"
+        "image": "/ex/duzzit/duzzit-baking-soda-cleaner-500g.png",
+        "ean": "8417631480378"
       },
       {
         "title": "Duzzit Biodegradeable Multi Surface Wipes Orange - 60 Pack",
-        "image": "/ex/Duzzit/Duzzit%20Biodegradeable%20Multi%20Surface%20Wipes%20Orange%20-%2060%20Pack.png",
-        "ean": "4914708460232"
+        "image": "/ex/duzzit/duzzit-biodegradeable-multi-surface-wipes-orange-60-pack.png",
+        "ean": "0517800704798"
       }
     ]
   },
@@ -65,18 +65,18 @@ export const productsByBrandSlug: Record<string, { brandName: string; products: 
     "products": [
       {
         "title": "Elbow Grease Anti Bacterial Wipes - 80 Pack",
-        "image": "/ex/Elbow%20Grease/Elbow%20Grease%20Anti%20Bacterial%20Wipes%20-%2080%20Pack.png",
-        "ean": "9805648245421"
+        "image": "/ex/elbow-grease/elbow-grease-anti-bacterial-wipes-80-pack.png",
+        "ean": "0381089084120"
       },
       {
         "title": "Elbow Grease Cream Cleaner - 540g",
-        "image": "/ex/Elbow%20Grease/Elbow%20Grease%20Cream%20Cleaner%20-%20540g.png",
-        "ean": "4091457022475"
+        "image": "/ex/elbow-grease/elbow-grease-cream-cleaner-540g.png",
+        "ean": "3802742322702"
       },
       {
         "title": "Elbow Grease Washing Up Liquid - 600ml",
-        "image": "/ex/Elbow%20Grease/Elbow%20Grease%20Washing%20Up%20Liquid%20-%20600ml.png",
-        "ean": "5061866866365"
+        "image": "/ex/elbow-grease/elbow-grease-washing-up-liquid-600ml.png",
+        "ean": "9947142078003"
       }
     ]
   },
@@ -85,18 +85,18 @@ export const productsByBrandSlug: Record<string, { brandName: string; products: 
     "products": [
       {
         "title": "Homemaid Kitchenware White Napkins 2 PLY Pack 50",
-        "image": "/ex/HomeMaid/Homemaid%20Kitchenware%20White%20Napkins%202%20PLY%20Pack%2050.png",
-        "ean": "5099395110222"
+        "image": "/ex/home-maid/homemaid-kitchenware-white-napkins-2-ply-pack-50.png",
+        "ean": "0270340595744"
       },
       {
         "title": "Multipack Homemaid Kitchenware - Bamboo Skewers 75-Pack",
-        "image": "/ex/HomeMaid/Multipack%20Homemaid%20Kitchenware%20-%20Bamboo%20Skewers%2075-Pack.png",
-        "ean": "2305726260096"
+        "image": "/ex/home-maid/multipack-homemaid-kitchenware-bamboo-skewers-75-pack.png",
+        "ean": "1616566271199"
       },
       {
         "title": "White Napkins - 1 ply - 125 Pack",
-        "image": "/ex/HomeMaid/White%20Napkins%20-%201%20ply%20-%20125%20Pack.png",
-        "ean": "6692052108397"
+        "image": "/ex/home-maid/white-napkins-1-ply-125-pack.png",
+        "ean": "0855262886486"
       }
     ]
   },
@@ -105,18 +105,18 @@ export const productsByBrandSlug: Record<string, { brandName: string; products: 
     "products": [
       {
         "title": "Kose Cosmeport Softymo Speedy Cleansing Oil 60ml",
-        "image": "/ex/KOSE/Kose%20Cosmeport%20Softymo%20Speedy%20Cleansing%20Oil%2060ml.png",
-        "ean": "0225735572718"
+        "image": "/ex/kose/kose-cosmeport-softymo-speedy-cleansing-oil-60ml.png",
+        "ean": "7134645829269"
       },
       {
         "title": "Kose Softymo Deep Cleansing Oil-230ml",
-        "image": "/ex/KOSE/Kose%20Softymo%20Deep%20Cleansing%20Oil-230ml.png",
-        "ean": "6582914243178"
+        "image": "/ex/kose/kose-softymo-deep-cleansing-oil-230ml.png",
+        "ean": "3502239039150"
       },
       {
         "title": "KOSE Softymo Speedy Makeup Remover Cleansing Oil - 240ml",
-        "image": "/ex/KOSE/KOSE%20Softymo%20Speedy%20Makeup%20Remover%20Cleansing%20Oil%20-%20240ml.png",
-        "ean": "5705111685584"
+        "image": "/ex/kose/kose-softymo-speedy-makeup-remover-cleansing-oil-240ml.png",
+        "ean": "6170960526873"
       }
     ]
   },
@@ -125,8 +125,8 @@ export const productsByBrandSlug: Record<string, { brandName: string; products: 
     "products": [
       {
         "title": "Lime Away All Purpose Descaler - 3 Pack",
-        "image": "/ex/LimeAway/Lime%20Away%20All%20Purpose%20Descaler%20-%203%20Pack.png",
-        "ean": "8382763737860"
+        "image": "/ex/lime-away/lime-away-all-purpose-descaler-3-pack.png",
+        "ean": "6760734632802"
       }
     ]
   },
@@ -135,18 +135,18 @@ export const productsByBrandSlug: Record<string, { brandName: string; products: 
     "products": [
       {
         "title": "medicube Collagen Jelly Cream - 110ml",
-        "image": "/ex/medicube/medicube%20Collagen%20Jelly%20Cream%20-%20110ml.png",
-        "ean": "1718335000464"
+        "image": "/ex/medicube/medicube-collagen-jelly-cream-110ml.png",
+        "ean": "7196784652061"
       },
       {
         "title": "medicube Salmon DNA PDRN Pink Peptide Serum",
-        "image": "/ex/medicube/medicube%20Salmon%20DNA%20PDRN%20Pink%20Peptide%20Serum.png",
-        "ean": "9784958839912"
+        "image": "/ex/medicube/medicube-salmon-dna-pdrn-pink-peptide-serum.png",
+        "ean": "5122483767852"
       },
       {
         "title": "medicube Zero Pore Padsof Joseon Relief Sun - 50ml - Pack of 2 - 70 Units",
-        "image": "/ex/medicube/medicube%20Zero%20Pore%20Padsof%20Joseon%20Relief%20Sun%20-%2050ml%20-%20Pack%20of%202%20-%2070%20Units.png",
-        "ean": "4945562934218"
+        "image": "/ex/medicube/medicube-zero-pore-padsof-joseon-relief-sun-50ml-pack-of-2-70-units.png",
+        "ean": "1370926253378"
       }
     ]
   },
@@ -155,18 +155,18 @@ export const productsByBrandSlug: Record<string, { brandName: string; products: 
     "products": [
       {
         "title": "Nestle Pure Life Still Spring Water 12 x 500 ml",
-        "image": "/ex/Nestle/Nestle%20Pure%20Life%20Still%20Spring%20Water%2012%20x%20500%20ml.png",
-        "ean": "8383578578426"
+        "image": "/ex/nestle/nestle-pure-life-still-spring-water-12-x-500-ml.png",
+        "ean": "3506880452504"
       },
       {
         "title": "Nestle Pure Life Still Spring Water Sports Cap 10 x 330ml",
-        "image": "/ex/Nestle/Nestle%20Pure%20Life%20Still%20Spring%20Water%20Sports%20Cap%2010%20x%20330ml.png",
-        "ean": "7144182305867"
+        "image": "/ex/nestle/nestle-pure-life-still-spring-water-sports-cap-10-x-330ml.png",
+        "ean": "6175160466257"
       },
       {
         "title": "Nestlé Pure Life Still Spring Water 6x1.5 L",
-        "image": "/ex/Nestle/Nestl%C3%A9%20Pure%20Life%20Still%20Spring%20Water%206x1.5%20L.png",
-        "ean": "3331233956770"
+        "image": "/ex/nestle/nestle-pure-life-still-spring-water-6x15-l.png",
+        "ean": "0391264603664"
       }
     ]
   },
@@ -175,18 +175,18 @@ export const productsByBrandSlug: Record<string, { brandName: string; products: 
     "products": [
       {
         "title": "Oven brite - Bottle Bag & Gloves Included - Complete Oven Cleaner - 500 ml",
-        "image": "/ex/Oven%20Brite/Oven%20brite%20-%20Bottle%20Bag%20%26%20Gloves%20Included%20-%20Complete%20Oven%20Cleaner%20-%20500%20ml.png",
-        "ean": "3354315704007"
+        "image": "/ex/oven-brite/oven-brite-bottle-bag-gloves-included-complete-oven-cleaner-500-ml.png",
+        "ean": "8143923617039"
       },
       {
         "title": "Oven Brite Oven & Grill Cleaner 400ml",
-        "image": "/ex/Oven%20Brite/Oven%20Brite%20Oven%20%26%20Grill%20Cleaner%20400ml.png",
-        "ean": "1695167706934"
+        "image": "/ex/oven-brite/oven-brite-oven-grill-cleaner-400ml.png",
+        "ean": "8811749787488"
       },
       {
         "title": "Oven Pride® Oven Cleaner - Complete Oven Cleaning Kit with Safety Gloves and Cleaning Bag Powerful",
-        "image": "/ex/Oven%20Brite/Oven%20Pride%C2%AE%20Oven%20Cleaner%20-%20Complete%20Oven%20Cleaning%20Kit%20with%20Safety%20Gloves%20and%20Cleaning%20Bag%20Powerful.png",
-        "ean": "2674396691371"
+        "image": "/ex/oven-brite/oven-pride-oven-cleaner-complete-oven-cleaning-kit-with-safety-gloves-and-cleaning-bag-powerful.png",
+        "ean": "4942044650956"
       }
     ]
   },
@@ -195,13 +195,13 @@ export const productsByBrandSlug: Record<string, { brandName: string; products: 
     "products": [
       {
         "title": "PURITO Mighty Bamboo Panthenol Cream - 100ml",
-        "image": "/ex/PURITO/PURITO%20Mighty%20Bamboo%20Panthenol%20Cream%20-%20100ml.png",
-        "ean": "9929451631148"
+        "image": "/ex/purito-seoul/purito-mighty-bamboo-panthenol-cream-100ml.png",
+        "ean": "6627966118521"
       },
       {
         "title": "PURITO Oat In Calming Gel Cream - 100ml",
-        "image": "/ex/PURITO/PURITO%20Oat%20In%20Calming%20Gel%20Cream%20-%20100ml.png",
-        "ean": "3671177227322"
+        "image": "/ex/purito-seoul/purito-oat-in-calming-gel-cream-100ml.png",
+        "ean": "1816813028082"
       }
     ]
   },
@@ -210,18 +210,18 @@ export const productsByBrandSlug: Record<string, { brandName: string; products: 
     "products": [
       {
         "title": "SWIRL A06 Vacuum Cleaner Bags",
-        "image": "/ex/Swirl/SWIRL%20A06%20Vacuum%20Cleaner%20Bags.png",
-        "ean": "0025375784409"
+        "image": "/ex/swirl/swirl-a06-vacuum-cleaner-bags.png",
+        "ean": "9816659361550"
       },
       {
         "title": "Swirl AirSpace Vacuum Cleaner Bags with Sealable Holding Plate - 4 Bags + 1 Filter",
-        "image": "/ex/Swirl/Swirl%20AirSpace%20Vacuum%20Cleaner%20Bags%20with%20Sealable%20Holding%20Plate%20-%204%20Bags%20%2B%201%20Filter.png",
-        "ean": "0627025942414"
+        "image": "/ex/swirl/swirl-airspace-vacuum-cleaner-bags-with-sealable-holding-plate-4-bags-1-filter.png",
+        "ean": "6721207508246"
       },
       {
         "title": "Swirl Fabric Softening Tumble Dryer Balls - Pink - 2 Pack",
-        "image": "/ex/Swirl/Swirl%20Fabric%20Softening%20Tumble%20Dryer%20Balls%20-%20Pink%20-%202%20Pack.png",
-        "ean": "2376031692001"
+        "image": "/ex/swirl/swirl-fabric-softening-tumble-dryer-balls-pink-2-pack.png",
+        "ean": "4100614088657"
       }
     ]
   },
@@ -230,17 +230,17 @@ export const productsByBrandSlug: Record<string, { brandName: string; products: 
     "products": [
       {
         "title": "TASSIMO Costa Cappuccino 16 discs, 8 servings",
-        "image": "/ex/TASSIMO/TASSIMO%20Costa%20Cappuccino%2016%20discs%2C%208%20servings.png",
-        "ean": "5937914367064"
+        "image": "/ex/tassimo/tassimo-costa-cappuccino-16-discs-8-servings.png",
+        "ean": "1707847225281"
       },
       {
         "title": "TASSIMO Costa Latte 16 discs, 8 servings",
-        "image": "/ex/TASSIMO/TASSIMO%20Costa%20Latte%2016%20discs%2C%208%20servings.png",
-        "ean": "9326682340366"
+        "image": "/ex/tassimo/tassimo-costa-latte-16-discs-8-servings.png",
+        "ean": "5726660335317"
       }
     ]
   }
 };
 
 /** All products flattened for search: brandSlug, brandName, title, image, ean */
-export const allProductsForSearch: Array<{ brandSlug: string; brandName: string; title: string; image: string; ean: string }> = [{"brandSlug":"always","brandName":"Always","title":"Always Infinity Feminine Pads for Women - 78 Count","image":"/ex/Always/Always%20Infinity%20Feminine%20Pads%20for%20Women%20-%2078%20Count.png","ean":"6291047942925"},{"brandSlug":"always","brandName":"Always","title":"Always Radiant Feminine Pads for Women - 54 Count","image":"/ex/Always/Always%20Radiant%20Feminine%20Pads%20for%20Women%20-%2054%20Count.png","ean":"3354861978389"},{"brandSlug":"beauty-of-joseon","brandName":"BEAUTY OF JOSEON","title":"Beauty of Joseon Relief Sun - 50ml - Pack of 2","image":"/ex/Beauty%20of%20Joseon/Beauty%20of%20Joseon%20Relief%20Sun%20-%2050ml%20-%20Pack%20of%202.png","ean":"08809782558905"},{"brandSlug":"beauty-of-joseon","brandName":"BEAUTY OF JOSEON","title":"Beauty of Joseon Relief Sun - 50ml","image":"/ex/Beauty%20of%20Joseon/Beauty%20of%20Joseon%20Relief%20Sun%20-%2050ml.png","ean":"8809782555508"},{"brandSlug":"duzzit","brandName":"Duzzit","title":"Duzzit - Shake & Fresh - Carpet Odour Neutraliser - Lily - 500g","image":"/ex/Duzzit/Duzzit%20-%20Shake%20%26%20Fresh%20-%20Carpet%20Odour%20Neutraliser%20-%20Lily%20-%20500g.png","ean":"8285329184842"},{"brandSlug":"duzzit","brandName":"Duzzit","title":"Duzzit Baking Soda Cleaner - 500g","image":"/ex/Duzzit/Duzzit%20Baking%20Soda%20Cleaner%20-%20500g.png","ean":"0863547413500"},{"brandSlug":"duzzit","brandName":"Duzzit","title":"Duzzit Biodegradeable Multi Surface Wipes Orange - 60 Pack","image":"/ex/Duzzit/Duzzit%20Biodegradeable%20Multi%20Surface%20Wipes%20Orange%20-%2060%20Pack.png","ean":"4914708460232"},{"brandSlug":"elbow-grease","brandName":"Elbow Grease","title":"Elbow Grease Anti Bacterial Wipes - 80 Pack","image":"/ex/Elbow%20Grease/Elbow%20Grease%20Anti%20Bacterial%20Wipes%20-%2080%20Pack.png","ean":"9805648245421"},{"brandSlug":"elbow-grease","brandName":"Elbow Grease","title":"Elbow Grease Cream Cleaner - 540g","image":"/ex/Elbow%20Grease/Elbow%20Grease%20Cream%20Cleaner%20-%20540g.png","ean":"4091457022475"},{"brandSlug":"elbow-grease","brandName":"Elbow Grease","title":"Elbow Grease Washing Up Liquid - 600ml","image":"/ex/Elbow%20Grease/Elbow%20Grease%20Washing%20Up%20Liquid%20-%20600ml.png","ean":"5061866866365"},{"brandSlug":"home-maid","brandName":"Home Maid","title":"Homemaid Kitchenware White Napkins 2 PLY Pack 50","image":"/ex/HomeMaid/Homemaid%20Kitchenware%20White%20Napkins%202%20PLY%20Pack%2050.png","ean":"5099395110222"},{"brandSlug":"home-maid","brandName":"Home Maid","title":"Multipack Homemaid Kitchenware - Bamboo Skewers 75-Pack","image":"/ex/HomeMaid/Multipack%20Homemaid%20Kitchenware%20-%20Bamboo%20Skewers%2075-Pack.png","ean":"2305726260096"},{"brandSlug":"home-maid","brandName":"Home Maid","title":"White Napkins - 1 ply - 125 Pack","image":"/ex/HomeMaid/White%20Napkins%20-%201%20ply%20-%20125%20Pack.png","ean":"6692052108397"},{"brandSlug":"kose","brandName":"KOSE","title":"Kose Cosmeport Softymo Speedy Cleansing Oil 60ml","image":"/ex/KOSE/Kose%20Cosmeport%20Softymo%20Speedy%20Cleansing%20Oil%2060ml.png","ean":"0225735572718"},{"brandSlug":"kose","brandName":"KOSE","title":"Kose Softymo Deep Cleansing Oil-230ml","image":"/ex/KOSE/Kose%20Softymo%20Deep%20Cleansing%20Oil-230ml.png","ean":"6582914243178"},{"brandSlug":"kose","brandName":"KOSE","title":"KOSE Softymo Speedy Makeup Remover Cleansing Oil - 240ml","image":"/ex/KOSE/KOSE%20Softymo%20Speedy%20Makeup%20Remover%20Cleansing%20Oil%20-%20240ml.png","ean":"5705111685584"},{"brandSlug":"lime-away","brandName":"Lime Away","title":"Lime Away All Purpose Descaler - 3 Pack","image":"/ex/LimeAway/Lime%20Away%20All%20Purpose%20Descaler%20-%203%20Pack.png","ean":"8382763737860"},{"brandSlug":"medicube","brandName":"medicube","title":"medicube Collagen Jelly Cream - 110ml","image":"/ex/medicube/medicube%20Collagen%20Jelly%20Cream%20-%20110ml.png","ean":"1718335000464"},{"brandSlug":"medicube","brandName":"medicube","title":"medicube Salmon DNA PDRN Pink Peptide Serum","image":"/ex/medicube/medicube%20Salmon%20DNA%20PDRN%20Pink%20Peptide%20Serum.png","ean":"9784958839912"},{"brandSlug":"medicube","brandName":"medicube","title":"medicube Zero Pore Padsof Joseon Relief Sun - 50ml - Pack of 2 - 70 Units","image":"/ex/medicube/medicube%20Zero%20Pore%20Padsof%20Joseon%20Relief%20Sun%20-%2050ml%20-%20Pack%20of%202%20-%2070%20Units.png","ean":"4945562934218"},{"brandSlug":"nestle","brandName":"Nestle","title":"Nestle Pure Life Still Spring Water 12 x 500 ml","image":"/ex/Nestle/Nestle%20Pure%20Life%20Still%20Spring%20Water%2012%20x%20500%20ml.png","ean":"8383578578426"},{"brandSlug":"nestle","brandName":"Nestle","title":"Nestle Pure Life Still Spring Water Sports Cap 10 x 330ml","image":"/ex/Nestle/Nestle%20Pure%20Life%20Still%20Spring%20Water%20Sports%20Cap%2010%20x%20330ml.png","ean":"7144182305867"},{"brandSlug":"nestle","brandName":"Nestle","title":"Nestlé Pure Life Still Spring Water 6x1.5 L","image":"/ex/Nestle/Nestl%C3%A9%20Pure%20Life%20Still%20Spring%20Water%206x1.5%20L.png","ean":"3331233956770"},{"brandSlug":"oven-brite","brandName":"Oven Brite","title":"Oven brite - Bottle Bag & Gloves Included - Complete Oven Cleaner - 500 ml","image":"/ex/Oven%20Brite/Oven%20brite%20-%20Bottle%20Bag%20%26%20Gloves%20Included%20-%20Complete%20Oven%20Cleaner%20-%20500%20ml.png","ean":"3354315704007"},{"brandSlug":"oven-brite","brandName":"Oven Brite","title":"Oven Brite Oven & Grill Cleaner 400ml","image":"/ex/Oven%20Brite/Oven%20Brite%20Oven%20%26%20Grill%20Cleaner%20400ml.png","ean":"1695167706934"},{"brandSlug":"oven-brite","brandName":"Oven Brite","title":"Oven Pride® Oven Cleaner - Complete Oven Cleaning Kit with Safety Gloves and Cleaning Bag Powerful","image":"/ex/Oven%20Brite/Oven%20Pride%C2%AE%20Oven%20Cleaner%20-%20Complete%20Oven%20Cleaning%20Kit%20with%20Safety%20Gloves%20and%20Cleaning%20Bag%20Powerful.png","ean":"2674396691371"},{"brandSlug":"purito-seoul","brandName":"Purito SEOUL","title":"PURITO Mighty Bamboo Panthenol Cream - 100ml","image":"/ex/PURITO/PURITO%20Mighty%20Bamboo%20Panthenol%20Cream%20-%20100ml.png","ean":"9929451631148"},{"brandSlug":"purito-seoul","brandName":"Purito SEOUL","title":"PURITO Oat In Calming Gel Cream - 100ml","image":"/ex/PURITO/PURITO%20Oat%20In%20Calming%20Gel%20Cream%20-%20100ml.png","ean":"3671177227322"},{"brandSlug":"swirl","brandName":"Swirl","title":"SWIRL A06 Vacuum Cleaner Bags","image":"/ex/Swirl/SWIRL%20A06%20Vacuum%20Cleaner%20Bags.png","ean":"0025375784409"},{"brandSlug":"swirl","brandName":"Swirl","title":"Swirl AirSpace Vacuum Cleaner Bags with Sealable Holding Plate - 4 Bags + 1 Filter","image":"/ex/Swirl/Swirl%20AirSpace%20Vacuum%20Cleaner%20Bags%20with%20Sealable%20Holding%20Plate%20-%204%20Bags%20%2B%201%20Filter.png","ean":"0627025942414"},{"brandSlug":"swirl","brandName":"Swirl","title":"Swirl Fabric Softening Tumble Dryer Balls - Pink - 2 Pack","image":"/ex/Swirl/Swirl%20Fabric%20Softening%20Tumble%20Dryer%20Balls%20-%20Pink%20-%202%20Pack.png","ean":"2376031692001"},{"brandSlug":"tassimo","brandName":"Tassimo","title":"TASSIMO Costa Cappuccino 16 discs, 8 servings","image":"/ex/TASSIMO/TASSIMO%20Costa%20Cappuccino%2016%20discs%2C%208%20servings.png","ean":"5937914367064"},{"brandSlug":"tassimo","brandName":"Tassimo","title":"TASSIMO Costa Latte 16 discs, 8 servings","image":"/ex/TASSIMO/TASSIMO%20Costa%20Latte%2016%20discs%2C%208%20servings.png","ean":"9326682340366"}];
+export const allProductsForSearch: Array<{ brandSlug: string; brandName: string; title: string; image: string; ean: string }> = [{"brandSlug":"always","brandName":"Always","title":"Always Infinity Feminine Pads for Women - 78 Count","image":"/ex/always/always-infinity-feminine-pads-for-women-78-count.png","ean":"2499700827129"},{"brandSlug":"always","brandName":"Always","title":"Always Radiant Feminine Pads for Women - 54 Count","image":"/ex/always/always-radiant-feminine-pads-for-women-54-count.png","ean":"8296090636744"},{"brandSlug":"beauty-of-joseon","brandName":"BEAUTY OF JOSEON","title":"Beauty of Joseon Relief Sun - 50ml - Pack of 2","image":"/ex/beauty-of-joseon/beauty-of-joseon-relief-sun-50ml-pack-of-2.png","ean":"08809782558905"},{"brandSlug":"beauty-of-joseon","brandName":"BEAUTY OF JOSEON","title":"Beauty of Joseon Relief Sun - 50ml","image":"/ex/beauty-of-joseon/beauty-of-joseon-relief-sun-50ml.png","ean":"8809782555508"},{"brandSlug":"duzzit","brandName":"Duzzit","title":"Duzzit - Shake & Fresh - Carpet Odour Neutraliser - Lily - 500g","image":"/ex/duzzit/duzzit-shake-fresh-carpet-odour-neutraliser-lily-500g.png","ean":"6565205719286"},{"brandSlug":"duzzit","brandName":"Duzzit","title":"Duzzit Baking Soda Cleaner - 500g","image":"/ex/duzzit/duzzit-baking-soda-cleaner-500g.png","ean":"8417631480378"},{"brandSlug":"duzzit","brandName":"Duzzit","title":"Duzzit Biodegradeable Multi Surface Wipes Orange - 60 Pack","image":"/ex/duzzit/duzzit-biodegradeable-multi-surface-wipes-orange-60-pack.png","ean":"0517800704798"},{"brandSlug":"elbow-grease","brandName":"Elbow Grease","title":"Elbow Grease Anti Bacterial Wipes - 80 Pack","image":"/ex/elbow-grease/elbow-grease-anti-bacterial-wipes-80-pack.png","ean":"0381089084120"},{"brandSlug":"elbow-grease","brandName":"Elbow Grease","title":"Elbow Grease Cream Cleaner - 540g","image":"/ex/elbow-grease/elbow-grease-cream-cleaner-540g.png","ean":"3802742322702"},{"brandSlug":"elbow-grease","brandName":"Elbow Grease","title":"Elbow Grease Washing Up Liquid - 600ml","image":"/ex/elbow-grease/elbow-grease-washing-up-liquid-600ml.png","ean":"9947142078003"},{"brandSlug":"home-maid","brandName":"Home Maid","title":"Homemaid Kitchenware White Napkins 2 PLY Pack 50","image":"/ex/home-maid/homemaid-kitchenware-white-napkins-2-ply-pack-50.png","ean":"0270340595744"},{"brandSlug":"home-maid","brandName":"Home Maid","title":"Multipack Homemaid Kitchenware - Bamboo Skewers 75-Pack","image":"/ex/home-maid/multipack-homemaid-kitchenware-bamboo-skewers-75-pack.png","ean":"1616566271199"},{"brandSlug":"home-maid","brandName":"Home Maid","title":"White Napkins - 1 ply - 125 Pack","image":"/ex/home-maid/white-napkins-1-ply-125-pack.png","ean":"0855262886486"},{"brandSlug":"kose","brandName":"KOSE","title":"Kose Cosmeport Softymo Speedy Cleansing Oil 60ml","image":"/ex/kose/kose-cosmeport-softymo-speedy-cleansing-oil-60ml.png","ean":"7134645829269"},{"brandSlug":"kose","brandName":"KOSE","title":"Kose Softymo Deep Cleansing Oil-230ml","image":"/ex/kose/kose-softymo-deep-cleansing-oil-230ml.png","ean":"3502239039150"},{"brandSlug":"kose","brandName":"KOSE","title":"KOSE Softymo Speedy Makeup Remover Cleansing Oil - 240ml","image":"/ex/kose/kose-softymo-speedy-makeup-remover-cleansing-oil-240ml.png","ean":"6170960526873"},{"brandSlug":"lime-away","brandName":"Lime Away","title":"Lime Away All Purpose Descaler - 3 Pack","image":"/ex/lime-away/lime-away-all-purpose-descaler-3-pack.png","ean":"6760734632802"},{"brandSlug":"medicube","brandName":"medicube","title":"medicube Collagen Jelly Cream - 110ml","image":"/ex/medicube/medicube-collagen-jelly-cream-110ml.png","ean":"7196784652061"},{"brandSlug":"medicube","brandName":"medicube","title":"medicube Salmon DNA PDRN Pink Peptide Serum","image":"/ex/medicube/medicube-salmon-dna-pdrn-pink-peptide-serum.png","ean":"5122483767852"},{"brandSlug":"medicube","brandName":"medicube","title":"medicube Zero Pore Padsof Joseon Relief Sun - 50ml - Pack of 2 - 70 Units","image":"/ex/medicube/medicube-zero-pore-padsof-joseon-relief-sun-50ml-pack-of-2-70-units.png","ean":"1370926253378"},{"brandSlug":"nestle","brandName":"Nestle","title":"Nestle Pure Life Still Spring Water 12 x 500 ml","image":"/ex/nestle/nestle-pure-life-still-spring-water-12-x-500-ml.png","ean":"3506880452504"},{"brandSlug":"nestle","brandName":"Nestle","title":"Nestle Pure Life Still Spring Water Sports Cap 10 x 330ml","image":"/ex/nestle/nestle-pure-life-still-spring-water-sports-cap-10-x-330ml.png","ean":"6175160466257"},{"brandSlug":"nestle","brandName":"Nestle","title":"Nestlé Pure Life Still Spring Water 6x1.5 L","image":"/ex/nestle/nestle-pure-life-still-spring-water-6x15-l.png","ean":"0391264603664"},{"brandSlug":"oven-brite","brandName":"Oven Brite","title":"Oven brite - Bottle Bag & Gloves Included - Complete Oven Cleaner - 500 ml","image":"/ex/oven-brite/oven-brite-bottle-bag-gloves-included-complete-oven-cleaner-500-ml.png","ean":"8143923617039"},{"brandSlug":"oven-brite","brandName":"Oven Brite","title":"Oven Brite Oven & Grill Cleaner 400ml","image":"/ex/oven-brite/oven-brite-oven-grill-cleaner-400ml.png","ean":"8811749787488"},{"brandSlug":"oven-brite","brandName":"Oven Brite","title":"Oven Pride® Oven Cleaner - Complete Oven Cleaning Kit with Safety Gloves and Cleaning Bag Powerful","image":"/ex/oven-brite/oven-pride-oven-cleaner-complete-oven-cleaning-kit-with-safety-gloves-and-cleaning-bag-powerful.png","ean":"4942044650956"},{"brandSlug":"purito-seoul","brandName":"Purito SEOUL","title":"PURITO Mighty Bamboo Panthenol Cream - 100ml","image":"/ex/purito-seoul/purito-mighty-bamboo-panthenol-cream-100ml.png","ean":"6627966118521"},{"brandSlug":"purito-seoul","brandName":"Purito SEOUL","title":"PURITO Oat In Calming Gel Cream - 100ml","image":"/ex/purito-seoul/purito-oat-in-calming-gel-cream-100ml.png","ean":"1816813028082"},{"brandSlug":"swirl","brandName":"Swirl","title":"SWIRL A06 Vacuum Cleaner Bags","image":"/ex/swirl/swirl-a06-vacuum-cleaner-bags.png","ean":"9816659361550"},{"brandSlug":"swirl","brandName":"Swirl","title":"Swirl AirSpace Vacuum Cleaner Bags with Sealable Holding Plate - 4 Bags + 1 Filter","image":"/ex/swirl/swirl-airspace-vacuum-cleaner-bags-with-sealable-holding-plate-4-bags-1-filter.png","ean":"6721207508246"},{"brandSlug":"swirl","brandName":"Swirl","title":"Swirl Fabric Softening Tumble Dryer Balls - Pink - 2 Pack","image":"/ex/swirl/swirl-fabric-softening-tumble-dryer-balls-pink-2-pack.png","ean":"4100614088657"},{"brandSlug":"tassimo","brandName":"Tassimo","title":"TASSIMO Costa Cappuccino 16 discs, 8 servings","image":"/ex/tassimo/tassimo-costa-cappuccino-16-discs-8-servings.png","ean":"1707847225281"},{"brandSlug":"tassimo","brandName":"Tassimo","title":"TASSIMO Costa Latte 16 discs, 8 servings","image":"/ex/tassimo/tassimo-costa-latte-16-discs-8-servings.png","ean":"5726660335317"}];
