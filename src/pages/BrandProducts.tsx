@@ -28,7 +28,21 @@ const BrandProducts = () => {
     document.title = brand ? `Shopulence | ${brand.name} – Products` : 'Shopulence | Brand Products';
   }, [brand]);
 
+  // Reset modal when brand or products change (e.g. navigation)
+  useEffect(() => {
+    setSelectedProductIndex(null);
+  }, [brandSlug, products.length]);
+
   const selectedProduct = selectedProductIndex !== null ? products[selectedProductIndex] : null;
+
+  useEffect(() => {
+    if (selectedProductIndex === null) return;
+    const onEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') closeModal();
+    };
+    document.addEventListener('keydown', onEscape);
+    return () => document.removeEventListener('keydown', onEscape);
+  }, [selectedProductIndex]);
 
   const openModal = (index: number) => {
     setSelectedProductIndex(index);
@@ -121,6 +135,9 @@ const BrandProducts = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-[#002D62] mb-8 pb-4 border-b-2 border-gray-200">
             Products
           </h2>
+          {products.length === 0 ? (
+            <p className="text-gray-600 mt-6">No products listed for this brand yet. Please check back later or contact us for more information.</p>
+          ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 mt-8">
             {products.map((product, index) => (
               <button
@@ -143,6 +160,7 @@ const BrandProducts = () => {
               </button>
             ))}
           </div>
+          )}
         </div>
       </section>
 
@@ -151,6 +169,9 @@ const BrandProducts = () => {
         <div
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50"
           onClick={closeModal}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modal-title"
         >
           <div
             className="bg-white rounded-xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto"
@@ -159,8 +180,8 @@ const BrandProducts = () => {
             <div className="sticky top-0 bg-white border-b border-gray-200 px-6 py-4 flex justify-between items-start">
               <div>
                 <p className="text-sm font-semibold text-gray-500 uppercase">Title</p>
-                <h2 className="text-lg font-bold text-[#002D62]">{selectedProduct.title}</h2>
-                <p className="text-xs text-gray-500 mt-1">EAN: {selectedProduct.ean}</p>
+                <h2 id="modal-title" className="text-lg font-bold text-[#002D62]">{selectedProduct.title}</h2>
+                <p className="text-xs text-gray-500 mt-1">EAN: {selectedProduct.ean || '—'}</p>
               </div>
               <button
                 type="button"

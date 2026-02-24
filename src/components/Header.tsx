@@ -19,18 +19,26 @@ const Header = () => {
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
-    if (pathname === '/search') setSearchQuery(searchParams.get('q') || '');
+    if (pathname === '/search') {
+      setSearchQuery(searchParams.get('q') || '');
+    } else {
+      setSearchQuery('');
+    }
   }, [pathname, searchParams]);
 
-  // Live search: navigate to search results as user types (debounced)
+  // Live search: navigate to search results as user types (debounced). Only when on search page so nav clicks work.
   useEffect(() => {
     if (debounceRef.current) clearTimeout(debounceRef.current);
     const q = searchQuery.trim();
     debounceRef.current = setTimeout(() => {
+      if (pathname !== '/search') {
+        debounceRef.current = null;
+        return;
+      }
       if (q) {
-        const currentQ = pathname === '/search' ? searchParams.get('q') || '' : '';
+        const currentQ = searchParams.get('q') || '';
         if (currentQ !== q) navigate(`/search?q=${encodeURIComponent(q)}`);
-      } else if (pathname === '/search') {
+      } else {
         navigate('/brands');
       }
       debounceRef.current = null;
