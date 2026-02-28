@@ -90,6 +90,7 @@ const TermsAndConditions = () => {
             </p>
             <p className="text-gray-600 mb-6 leading-relaxed">
               Email: admin@shopulence.co.uk<br />
+              Phone: 020 3488 8188<br />
               Address: Unit 1-3 Wyvern Estate Beverly Way, Beverly Way, New Malden KT3 4PH
             </p>
           </div>

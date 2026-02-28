@@ -55,7 +55,7 @@ const ReturnsAndRefunds = () => {
               To initiate a return:
             </p>
             <ol className="list-decimal pl-6 text-gray-600 mb-6 space-y-2">
-              <li>Contact us at admin@shopulence.co.uk or through your account manager</li>
+              <li>Contact us at admin@shopulence.co.uk, 020 3488 8188, or through your account manager</li>
               <li>Provide your order number and reason for return</li>
               <li>We will issue a Return Merchandise Authorization (RMA) number</li>
               <li>Pack the items securely in their original packaging</li>
@@ -111,7 +111,7 @@ const ReturnsAndRefunds = () => {
             <ul className="list-disc pl-6 text-gray-600 mb-6 space-y-2">
               <li>Check your bank account or credit card statement</li>
               <li>Contact your bank or credit card company (it may take time to process)</li>
-              <li>Contact us at admin@shopulence.co.uk with your order number</li>
+              <li>Contact us at admin@shopulence.co.uk or 020 3488 8188 with your order number</li>
             </ul>
 
             <h2 className="text-3xl font-bold text-[#002D62] mb-4 mt-8">11. Contact Information</h2>
@@ -120,6 +120,7 @@ const ReturnsAndRefunds = () => {
             </p>
             <p className="text-gray-600 mb-6 leading-relaxed">
               Email: admin@shopulence.co.uk<br />
+              Phone: 020 3488 8188<br />
               Address: Unit 1-3 Wyvern Estate Beverly Way, Beverly Way, New Malden KT3 4PH<br />
               Please include your order number in all communications for faster service.
             </p>

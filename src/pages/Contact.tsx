@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Mail, Send, Building2, Users, Headphones, MapPin } from 'lucide-react';
+import { Mail, Send, Building2, Users, Headphones, MapPin, Phone } from 'lucide-react';
 
 const Contact = () => {
   useEffect(() => {
@@ -130,7 +130,7 @@ const Contact = () => {
           <div className="flex flex-col gap-12 items-center">
             <div className="w-full max-w-2xl text-center">
               <h2 className="text-3xl font-bold text-[#002D62] mb-6">Get in Touch</h2>
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid md:grid-cols-3 gap-6">
                 <div className="bg-[#F3F4F6] p-6 rounded-lg">
                   <div className="flex flex-col items-center justify-center">
                     <div className="flex items-center mb-2">
@@ -139,6 +139,17 @@ const Contact = () => {
                     </div>
                     <a href="mailto:admin@shopulence.co.uk" className="text-gray-600 hover:text-[#002D62] transition">
                       admin@shopulence.co.uk
+                    </a>
+                  </div>
+                </div>
+                <div className="bg-[#F3F4F6] p-6 rounded-lg">
+                  <div className="flex flex-col items-center justify-center">
+                    <div className="flex items-center mb-2">
+                      <Phone size={24} className="text-[#002D62] mr-3 flex-shrink-0" />
+                      <h3 className="font-semibold text-lg">Phone</h3>
+                    </div>
+                    <a href="tel:02034888188" className="text-gray-600 hover:text-[#002D62] transition">
+                      020 3488 8188
                     </a>
                   </div>
                 </div>

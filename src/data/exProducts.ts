@@ -36,7 +36,7 @@ export const productsByBrandSlug: Record<string, { brandName: string; products: 
       {
         "title": "Beauty of Joseon Relief Sun - 50ml",
         "image": "/ex/beauty-of-joseon/beauty-of-joseon-relief-sun-50ml.png",
-        "ean": "8809782555508"
+        "ean": "08809782555508"
       }
     ]
   },

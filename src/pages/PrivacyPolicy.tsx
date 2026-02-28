@@ -103,7 +103,7 @@ const PrivacyPolicy = () => {
               <li>Right to withdraw consent</li>
             </ul>
             <p className="text-gray-600 mb-6 leading-relaxed">
-              To exercise these rights, please contact us at admin@shopulence.co.uk.
+              To exercise these rights, please contact us at admin@shopulence.co.uk or 020 3488 8188.
             </p>
 
             <h2 className="text-3xl font-bold text-[#002D62] mb-4 mt-8">8. Data Retention</h2>
@@ -132,6 +132,7 @@ const PrivacyPolicy = () => {
             </p>
             <p className="text-gray-600 mb-6 leading-relaxed">
               Email: admin@shopulence.co.uk<br />
+              Phone: 020 3488 8188<br />
               Address: Unit 1-3 Wyvern Estate Beverly Way, Beverly Way, New Malden KT3 4PH<br />
               Shopulence<br />
               Your Global Supply

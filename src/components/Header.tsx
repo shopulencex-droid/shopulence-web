@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate, useSearchParams } from 'react-router-dom';
-import { Menu, X, Mail, Facebook, Instagram, Linkedin, Search, XCircle } from 'lucide-react';
+import { Menu, X, Mail, Phone, Facebook, Instagram, Linkedin, Search, XCircle } from 'lucide-react';
 import logo from '../../assets/shopulence.png';
 
 const navLinkClass = (isActive: boolean) =>
@@ -73,6 +73,10 @@ const Header = () => {
               <a href="mailto:admin@shopulence.co.uk" className="flex items-center hover:text-gray-300 transition">
                 <Mail size={14} className="mr-1" />
                 admin@shopulence.co.uk
+              </a>
+              <a href="tel:02034888188" className="flex items-center hover:text-gray-300 transition ml-4">
+                <Phone size={14} className="mr-1" />
+                020 3488 8188
               </a>
               <div className="flex items-center space-x-3 ml-4 pl-4 border-l border-white/20">
                 <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300 transition">
