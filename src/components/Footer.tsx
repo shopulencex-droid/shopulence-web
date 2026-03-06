@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Mail, MapPin, Phone } from 'lucide-react';
+import { Mail, MapPin, Phone, Clock } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -98,6 +98,12 @@ const Footer = () => {
                 <a href="tel:02034888188" className="text-gray-300 hover:text-white transition">
                   020 3488 8188
                 </a>
+              </li>
+              <li className="flex items-start">
+                <Clock size={16} className="mr-2 flex-shrink-0 mt-0.5" />
+                <span className="text-gray-300">
+                  Mon – Fri: 9am – 5pm
+                </span>
               </li>
             </ul>
           </div>

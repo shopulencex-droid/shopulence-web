@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Mail, Send, Building2, Users, Headphones, MapPin, Phone } from 'lucide-react';
+import { Mail, Send, Building2, Users, Headphones, MapPin, Phone, Clock } from 'lucide-react';
 
 const Contact = () => {
   useEffect(() => {
@@ -128,38 +128,49 @@ const Contact = () => {
           </div>
 
           <div className="flex flex-col gap-12 items-center">
-            <div className="w-full max-w-2xl text-center">
+            <div className="w-full max-w-5xl text-center">
               <h2 className="text-3xl font-bold text-[#002D62] mb-6">Get in Touch</h2>
-              <div className="grid md:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div className="bg-[#F3F4F6] p-6 rounded-lg">
-                  <div className="flex flex-col items-center justify-center">
-                    <div className="flex items-center mb-2">
+                  <div className="flex flex-col items-center justify-center text-center">
+                    <div className="flex items-center justify-center mb-2">
                       <Mail size={24} className="text-[#002D62] mr-3 flex-shrink-0" />
                       <h3 className="font-semibold text-lg">Email</h3>
                     </div>
-                    <a href="mailto:admin@shopulence.co.uk" className="text-gray-600 hover:text-[#002D62] transition">
+                    <a href="mailto:admin@shopulence.co.uk" className="text-gray-600 hover:text-[#002D62] transition break-all">
                       admin@shopulence.co.uk
                     </a>
                   </div>
                 </div>
                 <div className="bg-[#F3F4F6] p-6 rounded-lg">
-                  <div className="flex flex-col items-center justify-center">
-                    <div className="flex items-center mb-2">
+                  <div className="flex flex-col items-center justify-center text-center">
+                    <div className="flex items-center justify-center mb-2">
                       <Phone size={24} className="text-[#002D62] mr-3 flex-shrink-0" />
                       <h3 className="font-semibold text-lg">Phone</h3>
                     </div>
-                    <a href="tel:02034888188" className="text-gray-600 hover:text-[#002D62] transition">
+                    <a href="tel:02034888188" className="text-gray-600 hover:text-[#002D62] transition whitespace-nowrap">
                       020 3488 8188
                     </a>
                   </div>
                 </div>
                 <div className="bg-[#F3F4F6] p-6 rounded-lg">
-                  <div className="flex flex-col items-center justify-center">
-                    <div className="flex items-center mb-2">
+                  <div className="flex flex-col items-center justify-center text-center">
+                    <div className="flex items-center justify-center mb-2">
+                      <Clock size={24} className="text-[#002D62] mr-3 flex-shrink-0" />
+                      <h3 className="font-semibold text-lg">Opening hours</h3>
+                    </div>
+                    <p className="text-gray-600 text-sm whitespace-nowrap">
+                      Mon – Fri: 9am – 5pm
+                    </p>
+                  </div>
+                </div>
+                <div className="bg-[#F3F4F6] p-6 rounded-lg">
+                  <div className="flex flex-col items-center justify-center text-center">
+                    <div className="flex items-center justify-center mb-2">
                       <MapPin size={24} className="text-[#002D62] mr-3 flex-shrink-0" />
                       <h3 className="font-semibold text-lg">Address</h3>
                     </div>
-                    <p className="text-gray-600 text-sm">
+                    <p className="text-gray-600 text-sm max-w-xs">
                       Unit 1-3 Wyvern Estate Beverly Way, Beverly Way, New Malden KT3 4PH
                     </p>
                   </div>
